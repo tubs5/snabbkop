@@ -136,7 +136,7 @@ public class MarketState {
 		 * This method adds an active checkout.
 		 * 
 		 */
-		public void addKassa() {
+		public void addActiveKassa() {
 			activeKassor++;
 		}
 		
@@ -145,8 +145,18 @@ public class MarketState {
 		 * This method removes an active checkout.
 		 * 
 		 */
-		public void removeKassa() {
+		public void removeActiveKassa() {
 			activeKassor--;
+		}
+		
+		
+		/**
+		 * This method returns the active amount of checkouts
+		 * 
+		 * @return number of active checkouts.
+		 */
+		public int getActiveKassor() {
+			return activeKassor;
 		}
 		/**
 		 * This method returns the total amount of time spent in queues.
