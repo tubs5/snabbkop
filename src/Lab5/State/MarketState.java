@@ -130,15 +130,6 @@ public class MarketState {
 			kassor = i;
 		}
 		
-		/**
-		 * gets the total time of the simulation
-		 * 
-		 * @return total time of simulation
-		 */
-		public double totalTime() {
-			
-		}
-		
 		
 		/**
 		 * This method returns the total amount of time spent in queues.
