@@ -28,9 +28,7 @@ public class View extends SimView {
 	}
 
 	public void update(Observable arg0, Object arg1) {
-		System.out.println("HÄNDELSER");
-		System.out.println("==========");
-		System.out.println(state.getTime() + " " + arg1 +); // INTE KLAR event name och customer variabler behövs
+		System.out.println(state.getTime() + " " + arg1 +); // INTE KLAR event och customer variabler behövs
 	}
 
 	public void start() {
@@ -43,7 +41,8 @@ public class View extends SimView {
 		System.out.println("MAX Plocktid: " + state.getP_max());
 		System.out.println("Slumpad seed: " + state.getSeed());
 		System.out.println("");
-
+		System.out.println("HÄNDELSER");
+		System.out.println("==========");
 	}
 
 	public void end() {
