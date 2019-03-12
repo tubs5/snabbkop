@@ -38,7 +38,7 @@ public class MarketState {
 			this.P_min = P_min;
 			this.arrivalSpeed = arrivalSpeed;
 			f = new FIFO();
-			time = new Time();
+			time = new Time(this);
 		}
 
 		
