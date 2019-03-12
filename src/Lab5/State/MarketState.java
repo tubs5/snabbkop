@@ -202,6 +202,14 @@ public class MarketState {
 		
 		
 		/**
+		 * This method adds a completed customer.
+		 * 
+		 */
+		public void addCompletedCustomers() {
+			completedCustomers++;
+		}
+		
+		/**
 		 * This method opens the store
 		 * 
 		 */
@@ -229,35 +237,56 @@ public class MarketState {
 		}
 		
 		/**
-		 * This method returns a generated seed
+		 * This method returns the arrival speed.
 		 * 
-		 * @return generated seed
+		 * @return The arrival speed
 		 */
-		public int generateSeed() {
-			
+		public double getArrivalSpeed() {
+			return arrivalSpeed;
 		}
-
-	public double getArrivalSpeed() {
-		return arrivalSpeed;
-	}
-
-	public double getP_min() {
-		return P_min;
-	}
-
-	public double getP_max() {
-		return P_max;
-	}
-
-	public double getB_min() {
-		return b_min;
-	}
-
-	public double getB_max() {
-		return b_max;
-	}
-
-	public int getSeed() {
-		return seed;
-	}
+		
+		/**
+		 * This method returns the minimum pick time.
+		 * 
+		 * @return Minimum pick time.
+		 */
+		public double getP_min() {
+			return P_min;
+		}
+		
+		/**
+		 * This method returns the maximum pick time.
+		 * 
+		 * @return Maximum pick time.
+		 */
+		public double getP_max() {
+			return P_max;
+		}
+		
+		/**
+		 * This method returns the minimum paying time.
+		 * 
+		 * @return Minimum paying time.
+		 */
+		public double getB_min() {
+			return b_min;
+		}
+		
+		/**
+		 * This method returns the maximum paying time.
+		 * 
+		 * @return Maximum paying time.
+		 */
+		public double getB_max() {
+			return b_max;
+		}
+		
+		/**
+		 * This method returns the seed.
+		 * 
+		 * @return The seed
+		 */
+		public int getSeed() {
+			return seed;
+		}
 }
