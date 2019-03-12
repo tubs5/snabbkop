@@ -3,7 +3,7 @@ package Lab5.View;
 import java.util.Observable;
 
 /**
- * 
+ *  TEST
  * @author Klas Mannberg
  * @version 0.1
  * @since 2019-03-08
