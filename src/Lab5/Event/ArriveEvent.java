@@ -1,7 +1,7 @@
 package Lab5.Event;
 
 import Lab5.Queue.EventQueue;
-import Lab5.State.MarketState;
+import Lab5.State.SimState;
 
 /**
  * Created by Tobias Heidlund on 2019-03-08.
@@ -9,8 +9,8 @@ import Lab5.State.MarketState;
 public class ArriveEvent extends Event {
 	private Customer customer;
 
-	public ArriveEvent(int startTime, EventQueue queue, SimState simState, Customer customer) {
-		super(startTime, queue, simState);
+	public ArriveEvent(int startTime, EventQueue queue, MarketState marketState, Customer customer) {
+		super(startTime, queue);
 		this.customer = customer;
 	}
 
