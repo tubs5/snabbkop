@@ -11,6 +11,7 @@ public class MarketState {
 		
 		private boolean emergencyStop = false;
 		private int kassor;
+		private int activeKassor;
 		private boolean isOpen = false;
 		private int completedCustomers;
 		private int missedCustomers;
@@ -131,6 +132,22 @@ public class MarketState {
 		}
 		
 		
+		/**
+		 * This method adds an active checkout.
+		 * 
+		 */
+		public void addKassa() {
+			activeKassor++;
+		}
+		
+		
+		/**
+		 * This method removes an active checkout.
+		 * 
+		 */
+		public void removeKassa() {
+			activeKassor--;
+		}
 		/**
 		 * This method returns the total amount of time spent in queues.
 		 * 
