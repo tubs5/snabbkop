@@ -188,6 +188,11 @@ public class MarketState {
 			missedCustomers = i;
 		}
 		
+		
+		public void addMissedCustomers() {
+			missedCustomers++;
+		}
+		
 		/**
 		 * This method return the amount of completed customers.
 		 * 
