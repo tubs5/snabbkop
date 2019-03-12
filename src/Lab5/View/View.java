@@ -2,7 +2,6 @@ package Lab5.View;
 
 import java.util.Observable;
 
-import Lab5.State.SimState;
 /**
  * 
  * @author Klas Mannberg
