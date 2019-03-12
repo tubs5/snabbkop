@@ -2,7 +2,7 @@ package Lab5.State;
 
 public class MarketState {
 	
-		private int currentCustomers;
+		private int currentCustomers = 0;
 		private int maxCustomers;
 		
 		private boolean emergencyStop = false;
@@ -18,8 +18,28 @@ public class MarketState {
 		private int seed;
 		
 		public FIFO customerQueue() {
-			return null;
+			return null;  //Need to fix
 			
+		}
+		
+		
+		/**
+		 * This method returns the current amount of customers
+		 * 
+		 * @return The amount of customers.
+		 */
+		public int getCurrentCustomers() {
+			return currentCustomers;
+		}
+		
+		
+		/**
+		 * This method sets the current amount of customers.
+		 * 
+		 * @param i An integer
+		 */
+		public void setCurrentCustomers(int i) {
+			currentCustomers = i;
 		}
 		
 		
