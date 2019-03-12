@@ -12,15 +12,34 @@ public class MarketState {
 		private boolean emergencyStop = false;
 		private int kassor;
 		private boolean isOpen = false;
-		
 		private int completedCustomers;
 		private int missedCustomers;
-		
+		private Time time;
 		private double timeWasted;
 		private double totalQueueTime;
-		
+		private double arrivalSpeed;
+		private double P_min;
+		private double P_max;
+		private double b_min;
+		private double b_max;
 		private int seed;
-		
+
+
+		public MarketState(int kassor,int maxCustomers,double arrivalSpeed, double P_min, double P_max,
+						   double b_min, double b_max, int seed){
+			this.kassor = kassor;
+			this.maxCustomers = maxCustomers;
+			this.seed = seed;
+			this.b_min = b_min;
+			this.b_max = b_max;
+			this.P_max = P_max;
+			this.P_min = P_min;
+			this.arrivalSpeed = arrivalSpeed;
+		}
+
+
+
+
 		public FIFO customerQueue() {
 			return null;  //Need to fix
 			
@@ -217,4 +236,28 @@ public class MarketState {
 		public int generateSeed() {
 			
 		}
+
+	public double getArrivalSpeed() {
+		return arrivalSpeed;
+	}
+
+	public double getP_min() {
+		return P_min;
+	}
+
+	public double getP_max() {
+		return P_max;
+	}
+
+	public double getB_min() {
+		return b_min;
+	}
+
+	public double getB_max() {
+		return b_max;
+	}
+
+	public int getSeed() {
+		return seed;
+	}
 }

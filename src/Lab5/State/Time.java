@@ -11,4 +11,10 @@ public class Time {
 	public double getTime() {
 		return time;
 	}
+
+	public double getPickupTime(){
+		return
+	}
+
+
 }

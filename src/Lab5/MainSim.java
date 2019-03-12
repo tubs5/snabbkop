@@ -1,6 +1,7 @@
 package Lab5;
 
 import Lab5.Queue.EventQueue;
+import Lab5.State.MarketState;
 import Lab5.View.View;
 
 /**
@@ -13,7 +14,7 @@ import Lab5.View.View;
 public class MainSim {
 	public static void main(String[] args) {
 		EventQueue events = new EventQueue();
-		SimState state = new SimState();
+		MarketState state = new MarketState();
 		View view = new View(state);
 		
 		Simulator Market = new Simulator(view, events, state);
