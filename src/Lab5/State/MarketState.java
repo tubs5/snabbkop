@@ -24,6 +24,7 @@ public class MarketState {
 		private double b_max;
 		private int seed;
 		private FIFO f;
+		
 
 
 		public MarketState(int kassor,int maxCustomers,double arrivalSpeed, double P_min, double P_max,
@@ -37,9 +38,18 @@ public class MarketState {
 			this.P_min = P_min;
 			this.arrivalSpeed = arrivalSpeed;
 			f = new FIFO();
+			time = new Time();
 		}
 
-
+		
+		/**
+		 * This method returns the time
+		 * 
+		 * @return The time
+		 */
+		public Time getTime() {
+			return time;
+		}
 
 		/**
 		 * This method returns the FIFO queue.
