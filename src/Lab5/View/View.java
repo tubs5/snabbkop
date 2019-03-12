@@ -28,7 +28,7 @@ public class View extends SimView {
 	}
 
 	public void update(Observable arg0, Object arg1) {
-		System.out.println("HÄNDELsER");
+		System.out.println("HÄNDELSER");
 		System.out.println("==========");
 		System.out.println(state.getTime() + " " + arg1 +); // INTE KLAR event name och customer behövs
 	}
