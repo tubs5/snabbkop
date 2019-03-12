@@ -7,6 +7,7 @@ public class MarketState {
 		
 		private boolean emergencyStop = false;
 		private int kassor;
+		private boolean isOpen = false;
 		
 		private int completedCustomers;
 		private int missedCustomers;
@@ -17,6 +18,7 @@ public class MarketState {
 		private int seed;
 		
 		public FIFO customerQueue() {
+			return null;
 			
 		}
 		
@@ -125,6 +127,24 @@ public class MarketState {
 		 */
 		public void setCompletedCustomers(int i) {
 			completedCustomers = i;
+		}
+		
+		
+		/**
+		 * This method opens the store
+		 * 
+		 */
+		public void openStore() {
+			isOpen = true;
+		}
+		
+		
+		/**
+		 * This method closes the store.
+		 * 
+		 */
+		public void closeStore() {
+			isOpen = false;
 		}
 		
 		/**
