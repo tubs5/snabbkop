@@ -2,6 +2,8 @@ package Lab5.View;
 
 import java.util.Observable;
 
+import Lab5.Event.ArriveEvent;
+import Lab5.Event.PayEvent;
 import Lab5.State.MarketState;
 import Lab5.State.SimState;
 
@@ -28,7 +30,35 @@ public class View extends SimView {
 	}
 
 	public void update(Observable arg0, Object arg1) {
-		System.out.println(state.getTime() + " " + arg1 +); // INTE KLAR event och customer variabler behövs
+	
+		//beroende på typ av event behövs olika medelanden, 
+		//eller så kan eventen ha en getstring metod som jag kan ta ut här
+		if (event is arrive) {
+			ArriveEvent arrive = (ArriveEvent) arg1;
+			String action = "Ankomst";
+			arrive.getCustomer().getID();
+			arrive.getCustomer().getTimeReturnQueue();
+			arrive.getCustomer().getTimeReturnStore();
+			System.out.println(state.getTime() + " " + arg1 +);
+		} else if (event is pay) {
+			PayEvent arrive = (PayEvent) arg1;
+			String action = "Betalning";
+			arrive.getCustomer().getID();
+			arrive.getCustomer().getTimeReturnQueue();
+			arrive.getCustomer().getTimeReturnStore();
+			System.out.println(state.getTime() + " " + arg1 +);
+			
+		} else if (event is pickup) {
+			PayEvent arrive = (PayEvent) arg1;
+			String action = "Plock";
+			arrive.getCustomer().getID();
+			arrive.getCustomer().getTimeReturnQueue();
+			arrive.getCustomer().getTimeReturnStore();
+			System.out.println(state.getTime() + " " + arg1 +);
+			
+		} else if (event is close) {
+			
+		}
 	}
 
 	public void start() {
