@@ -1,7 +1,7 @@
 package Lab5.Event;
 
 import Lab5.Queue.EventQueue;
-import Lab5.State.SimState;
+import Lab5.State.MarketState;
 
 /**
  * Created by Tobias Heidlund on 2019-03-08.
@@ -16,14 +16,14 @@ public class ArriveEvent extends Event {
 
 	@Override
 	public void ExecuteEvent() {
-		if () {
+		if (isOpen = true) {
 		if (maxCustomers <= currentCustomers) {
 
 		} else {
 			missedCustomers += 1;
 		}
 		}
-	}
+	} 
 
 	@Override
 	public double getStartTime() {
