@@ -1,5 +1,9 @@
 package Lab5.State;
-
+/**
+ * 
+ * @author Simon Lundberg
+ *
+ */
 public class MarketState {
 	
 		private int currentCustomers = 0;

@@ -2,7 +2,11 @@ package Lab5.State;
 
 import java.util.ArrayList;
 import java.util.Queue;
-
+/**
+ * 
+ * @author Simon Lundberg and Tobias Heidlund
+ *
+ */
 public class FIFO{
 	
 	private ArrayList<Customer> queue = new ArrayList<Customer>();
@@ -13,10 +17,20 @@ public class FIFO{
 		return c;
 	}
 	
+	/**
+	 * This method adds a customer to the queue.
+	 * 
+	 * @param c A customer
+	 */
 	public void add(Customer c) {
 		queue.add(c);
 	}
 	
+	/**
+	 * This method removes a customer to the queue.
+	 * 
+	 * @param c A customer
+	 */
 	public void remove(Customer c) {
 		queue.remove(c);
 	}

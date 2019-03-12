@@ -7,11 +7,21 @@ import Lab5.Event.*;
  */
 public class EventQueue {
     private SortedSequence sequence = new SortedSequence();
-
+    
+    /**
+     * This method returns the next event
+     * 
+     * @return The next event
+     */
     public Event getNextEvent(){
         return sequence.getNextEvent();
     }
-
+    
+    /**
+     * This method adds an event
+     * 
+     * @param event An event
+     */
     public void addEvent(Event event){
         sequence.addEvent(event);
     }

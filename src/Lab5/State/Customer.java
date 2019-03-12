@@ -1,5 +1,10 @@
 package Lab5.State;
 
+/**
+ * 
+ * @author Simon Lundberg
+ *
+ */
 public class Customer {
 	
 	private int customerID;
@@ -55,7 +60,11 @@ public class Customer {
 		return customerID;
 	}
 	
-	
+	/**
+	 * This method sets the customers ID.
+	 * 
+	 * @param i An integer
+	 */
 	public void setID(int i) {
 		customerID = i;
 	}
