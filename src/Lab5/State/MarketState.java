@@ -189,6 +189,10 @@ public class MarketState {
 		}
 		
 		
+		/**
+		 * This method adds a missed customer. 
+		 * 
+		 */
 		public void addMissedCustomers() {
 			missedCustomers++;
 		}
