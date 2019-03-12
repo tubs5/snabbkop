@@ -9,7 +9,7 @@ import Lab5.State.Customer;
 public class ArriveEvent extends Event {
 	private Customer customer;
 
-	public ArriveEvent(int startTime, EventQueue queue, MarketState marketState, Customer customer) {
+	public ArriveEvent(double startTime, EventQueue queue, MarketState marketState, Customer customer) {
 		super(startTime, queue);
 		this.customer = customer;
 	}
@@ -17,6 +17,7 @@ public class ArriveEvent extends Event {
 	@Override
 	public void ExecuteEvent() {
 		if (isOpen = true) {
+			ArrivEvent
 		if (maxCustomers <= currentCustomers) {
 
 		} else {

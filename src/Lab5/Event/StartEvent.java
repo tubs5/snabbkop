@@ -16,7 +16,7 @@ public class StartEvent extends Event{
     @Override
     public void ExecuteEvent() {
         Customer customer = new Customer();
-        ArriveEvent arriveEvent = new ArriveEvent(,queue,marketState,customer);
+        ArriveEvent arriveEvent = new ArriveEvent( ,queue, marketState, customer);
         queue.addEvent(arriveEvent);
     }
 
