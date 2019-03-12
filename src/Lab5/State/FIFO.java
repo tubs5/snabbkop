@@ -7,7 +7,7 @@ public class FIFO{
 	
 	private ArrayList<Customer> queue = new ArrayList<Customer>();
 	
-	public Customer returnFIFO () { //????
+	public Customer returnFIFO () { 
 		Customer c =  queue.get(0);
 		queue.remove(0);
 		return c;
