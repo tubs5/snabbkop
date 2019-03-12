@@ -25,7 +25,6 @@ public class MarketState {
 		private int seed;
 		private FIFO f;
 
-		private int test = 0;
 
 
 		public MarketState(int kassor,int maxCustomers,double arrivalSpeed, double P_min, double P_max,
@@ -39,7 +38,7 @@ public class MarketState {
 			this.P_min = P_min;
 			this.arrivalSpeed = arrivalSpeed;
 			f = new FIFO();
-			time = new Time();
+			time = new Time(this);
 		}
 
 		
@@ -131,15 +130,6 @@ public class MarketState {
 			kassor = i;
 		}
 		
-		/**
-		 * gets the total time of the simulation
-		 * 
-		 * @return total time of simulation
-		 */
-		public double totalTime() {
-			
-		}
-		
 		
 		/**
 		 * This method returns the total amount of time spent in queues.
@@ -196,6 +186,15 @@ public class MarketState {
 		 */
 		public void setMissedCustomers(int i) {
 			missedCustomers = i;
+		}
+		
+		
+		/**
+		 * This method adds a missed customer. 
+		 * 
+		 */
+		public void addMissedCustomers() {
+			missedCustomers++;
 		}
 		
 		/**
