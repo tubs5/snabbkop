@@ -3,7 +3,9 @@ package Lab5.View;
 import java.util.Observable;
 
 import Lab5.Event.ArriveEvent;
+import Lab5.Event.CloseEvent;
 import Lab5.Event.PayEvent;
+import Lab5.Event.PickupEvent;
 import Lab5.State.MarketState;
 import Lab5.State.SimState;
 
@@ -30,35 +32,42 @@ public class View extends SimView {
 	}
 
 	public void update(Observable arg0, Object arg1) {
-	
-		//beroende på typ av event behövs olika medelanden, 
-		//eller så kan eventen ha en getstring metod som jag kan ta ut här
-		if (event is arrive) {
-			ArriveEvent arrive = (ArriveEvent) arg1;
-			String action = "Ankomst";
-			arrive.getCustomer().getID();
-			arrive.getCustomer().getTimeReturnQueue();
-			arrive.getCustomer().getTimeReturnStore();
-			System.out.println(state.getTime() + " " + arg1 +);
-		} else if (event is pay) {
-			PayEvent arrive = (PayEvent) arg1;
-			String action = "Betalning";
-			arrive.getCustomer().getID();
-			arrive.getCustomer().getTimeReturnQueue();
-			arrive.getCustomer().getTimeReturnStore();
-			System.out.println(state.getTime() + " " + arg1 +);
-			
-		} else if (event is pickup) {
-			PayEvent arrive = (PayEvent) arg1;
-			String action = "Plock";
-			arrive.getCustomer().getID();
-			arrive.getCustomer().getTimeReturnQueue();
-			arrive.getCustomer().getTimeReturnStore();
-			System.out.println(state.getTime() + " " + arg1 +);
-			
-		} else if (event is close) {
-			
+		String action = null;
+		int id = 0;
+		double qtime = 0;
+		double stime = 0;
+
+		// beroende på typ av event behövs olika medelanden,
+		if (arg1 instanceof ArriveEvent) {
+			ArriveEvent event = (ArriveEvent) arg1;
+			action = "Ankomst";
+			id = event.getCustomer().getID();
+			qtime = event.getCustomer().getTimeReturnQueue();
+			stime = event.getCustomer().getTimeReturnStore();
+
+		} else if (arg1 instanceof PayEvent) {
+			PayEvent event = (PayEvent) arg1;
+			action = "Betalning";
+			id = event.getCustomer().getID();
+			qtime = event.getCustomer().getTimeReturnQueue();
+			stime = event.getCustomer().getTimeReturnStore();
+
+		} else if (arg1 instanceof PickupEvent) {
+			PickupEvent event = (PickupEvent) arg1;
+			action = "Plock";
+			id = event.getCustomer().getID();
+			qtime = event.getCustomer().getTimeReturnQueue();
+			stime = event.getCustomer().getTimeReturnStore();
+
+		} else if (arg1 instanceof CloseEvent) {
+			CloseEvent event = (CloseEvent) arg1;
+			action = "Close";
+			System.out.println(action);
 		}
+		if (!(arg1 instanceof CloseEvent)) {
+			System.out.println(state.getTime() + " " + action + " " + id + " " + qtime + " " + stime);
+		}
+
 	}
 
 	public void start() {
@@ -73,6 +82,7 @@ public class View extends SimView {
 		System.out.println("");
 		System.out.println("HÄNDELSER");
 		System.out.println("==========");
+		System.out.println("Tid  Händelse  Kund  Kötid  Affärtid");
 	}
 
 	public void end() {
