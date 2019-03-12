@@ -10,14 +10,14 @@ public class MarketState {
 		private int maxCustomers;
 		
 		private boolean emergencyStop = false;
-		private int kassor;
-		private int activeKassor;
+		private int kassor = 0;
+		private int activeKassor= 0;
 		private boolean isOpen = false;
-		private int completedCustomers;
-		private int missedCustomers;
+		private int completedCustomers = 0;
+		private int missedCustomers = 0;
 		private Time time;
-		private double timeWasted;
-		private double totalQueueTime;
+		private double timeWasted = 0;
+		private double totalQueueTime = 0;
 		private double arrivalSpeed;
 		private double P_min;
 		private double P_max;
