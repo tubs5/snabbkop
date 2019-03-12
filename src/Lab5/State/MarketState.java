@@ -64,6 +64,34 @@ public class MarketState {
 		
 		
 		/**
+		 * This method triggers an emergency stop.
+		 * 
+		 */
+		public void emergencyStop() {
+			emergencyStop = true;
+		}
+		
+		
+		/**
+		 * This method returns the amount of checkouts.
+		 * 
+		 * @return the amount of checkouts
+		 */
+		public int getKassor() {
+			return kassor;
+		}
+		
+		
+		/**
+		 * This method sets the amount of checkouts.
+		 * 
+		 * @param i An integer
+		 */
+		public void setKassor(int i) {
+			kassor = i;
+		}
+		
+		/**
 		 * gets the total time of the simulation
 		 * 
 		 * @return total time of simulation
@@ -165,6 +193,16 @@ public class MarketState {
 		 */
 		public void closeStore() {
 			isOpen = false;
+		}
+		
+		
+		/**
+		 * This method checks if the store is open or closed
+		 * 
+		 * @return The open/close state of the store
+		 */
+		public boolean getStore() {
+			return isOpen;
 		}
 		
 		/**
