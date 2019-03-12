@@ -2,14 +2,20 @@ package Lab5.View;
 
 import java.util.Observable;
 
+import Lab5.State.MarketState;
+import Lab5.State.SimState;
+
 /**
- *  TEST
+ * Prints start parameters, results and events
+ * 
  * @author Klas Mannberg
- * @version 0.1
+ * @version 0.9
  * @since 2019-03-08
  * 
  */
 public class View extends SimView {
+
+	private MarketState state;
 
 	/**
 	 * View gets called with a state parameter and sets super class variable with
@@ -22,18 +28,32 @@ public class View extends SimView {
 	}
 
 	public void update(Observable arg0, Object arg1) {
-
+		System.out.println("HÄNDELsER");
+		System.out.println("==========");
+		System.out.println(state.getTime() + " " + arg1 +); // INTE KLAR event name och customer behövs
 	}
 
 	public void start() {
-
-	}
-
-	public void print() {
+		System.out.println("PARAMETRAR");
+		System.out.println("==========");
+		System.out.println("Antal kassor: " + state.getKassor());
+		System.out.println("Max kunder: " + state.getMaxCustomers());
+		System.out.println("Ankomsthastighet: " + state.getArrivalSpeed());
+		System.out.println("MIN plocktid: " + state.getP_min());
+		System.out.println("MAX Plocktid: " + state.getP_max());
+		System.out.println("Slumpad seed: " + state.getSeed());
 
 	}
 
 	public void end() {
+		System.out.println("RESULTAT");
+		System.out.println("==========");
+		System.out.println("Av " + state.getMaxCustomers() + " kunder behandlades " + state.getCompletedCustomers()
+				+ " medans " + state.getMissedCustomers() + " kunder missades");
+		System.out.println("Total ledig tid från " + state.getKassor() + " kassor blev " + state.getTimeWasted()
+				+ ". Genomsnittlig ledig tid blev " + state.getTimeWasted() / state.getKassor());
+		System.out.println("Total kötid för " + state.getMaxCustomers() + " kunder blev " + state.getTotalQueueTime()
+				+ ". Genomsnittlig ledig tid blev " + state.getTotalQueueTime() / state.getMaxCustomers());
 
 	}
 

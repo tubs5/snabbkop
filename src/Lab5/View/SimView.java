@@ -2,9 +2,10 @@ package Lab5.View;
 
 import java.util.Observer;
 
+import Lab5.State.SimState;
+
 /**
- * Abstract class for simulator views, informs current view to extending
- * classes
+ * Abstract class for simulator views
  * 
  * @author Klas Mannberg
  * @version 1.0
@@ -22,9 +23,6 @@ public abstract class SimView implements Observer {
 		this.sState = update;
 	}
 
-	/**
-	 * State could be relayed in parameter for printing
-	 */
 	public abstract void start();
 
 	public abstract void print();
