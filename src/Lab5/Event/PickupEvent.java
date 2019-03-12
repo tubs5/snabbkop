@@ -2,6 +2,7 @@ package Lab5.Event;
 
 import Lab5.Queue.EventQueue;
 import Lab5.State.Customer;
+import Lab5.State.FIFO;
 import Lab5.State.MarketState;
 
 /**
@@ -9,14 +10,15 @@ import Lab5.State.MarketState;
  */
 public class PickupEvent extends Event{
     private Customer customer;
-
-    public PickupEvent(int startTime, EventQueue queue, MarketState simState, Customer customer) {
+    private MarketState marketState;
+    public PickupEvent(double startTime, EventQueue queue, MarketState simState, Customer customer) {
         super(startTime, queue);
         this.customer = customer;
     }
 
     @Override
     public void ExecuteEvent() {
+        if (marketState.ka)
 
     }
 
