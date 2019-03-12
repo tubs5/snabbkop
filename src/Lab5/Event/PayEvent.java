@@ -1,7 +1,8 @@
 package Lab5.Event;
 
 import Lab5.Queue.EventQueue;
-import Lab5.State.SimState;
+import Lab5.State.Customer;
+import Lab5.State.MarketState;
 
 /**
  * Created by Tobias Heidlund on 2019-03-08.
@@ -9,8 +10,9 @@ import Lab5.State.SimState;
 public class PayEvent extends Event{
     private Customer customer;
 
-    public PayEvent(int startTime, EventQueue queue, SimState simState) {
-        super(startTime, queue, simState);
+    public PayEvent(int startTime, EventQueue queue, MarketState marketState)
+    {
+        super(startTime, queue);
     }
 
     @Override

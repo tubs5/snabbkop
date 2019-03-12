@@ -1,7 +1,6 @@
 package Lab5;
 
 import Lab5.Queue.EventQueue;
-import Lab5.State.SimState;
 import Lab5.View.View;
 
 /**

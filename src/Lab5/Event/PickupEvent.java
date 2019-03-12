@@ -1,7 +1,8 @@
 package Lab5.Event;
 
 import Lab5.Queue.EventQueue;
-import Lab5.State.SimState;
+import Lab5.State.Customer;
+import Lab5.State.MarketState;
 
 /**
  * Created by Tobias Heidlund on 2019-03-08.
@@ -9,8 +10,8 @@ import Lab5.State.SimState;
 public class PickupEvent extends Event{
     private Customer customer;
 
-    public PickupEvent(int startTime, EventQueue queue, SimState simState,Customer customer) {
-        super(startTime, queue, simState);
+    public PickupEvent(int startTime, EventQueue queue, MarketState simState, Customer customer) {
+        super(startTime, queue);
         this.customer = customer;
     }
 

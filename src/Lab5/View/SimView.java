@@ -1,7 +1,6 @@
 package Lab5.View;
 
 import java.util.Observer;
-import Lab5.State.SimState;
 
 /**
  * Abstract class for simulator views, informs current view to extending

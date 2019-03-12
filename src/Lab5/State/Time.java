@@ -2,10 +2,13 @@ package Lab5.State;
 
 public class Time {
 	
-	private double timeStarted;
-	private double timeNow;
+	private double time;
 	
-	public double calculateTime() {
-		return (timeNow-timeStarted);
+	public void setTime(double time) {
+		this.time = time;
+	}
+
+	public double getTime() {
+		return time;
 	}
 }

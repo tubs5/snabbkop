@@ -1,7 +1,7 @@
 package Lab5.Event;
 
 import Lab5.Queue.EventQueue;
-import Lab5.State.SimState;
+import Lab5.State.Customer;
 
 /**
  * Created by Tobias Heidlund on 2019-03-08.
