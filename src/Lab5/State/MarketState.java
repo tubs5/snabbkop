@@ -2,7 +2,7 @@ package Lab5.State;
 
 public class MarketState {
 	
-		private int currentCustomers;
+		private int currentCustomers = 0;
 		private int maxCustomers;
 		
 		private boolean emergencyStop = false;
@@ -18,8 +18,28 @@ public class MarketState {
 		private int seed;
 		
 		public FIFO customerQueue() {
-			return null;
+			return null;  //Need to fix
 			
+		}
+		
+		
+		/**
+		 * This method returns the current amount of customers
+		 * 
+		 * @return The amount of customers.
+		 */
+		public int getCurrentCustomers() {
+			return currentCustomers;
+		}
+		
+		
+		/**
+		 * This method sets the current amount of customers.
+		 * 
+		 * @param i An integer
+		 */
+		public void setCurrentCustomers(int i) {
+			currentCustomers = i;
 		}
 		
 		
@@ -42,6 +62,34 @@ public class MarketState {
 			maxCustomers = i;
 		}
 		
+		
+		/**
+		 * This method triggers an emergency stop.
+		 * 
+		 */
+		public void emergencyStop() {
+			emergencyStop = true;
+		}
+		
+		
+		/**
+		 * This method returns the amount of checkouts.
+		 * 
+		 * @return the amount of checkouts
+		 */
+		public int getKassor() {
+			return kassor;
+		}
+		
+		
+		/**
+		 * This method sets the amount of checkouts.
+		 * 
+		 * @param i An integer
+		 */
+		public void setKassor(int i) {
+			kassor = i;
+		}
 		
 		/**
 		 * gets the total time of the simulation
@@ -145,6 +193,16 @@ public class MarketState {
 		 */
 		public void closeStore() {
 			isOpen = false;
+		}
+		
+		
+		/**
+		 * This method checks if the store is open or closed
+		 * 
+		 * @return The open/close state of the store
+		 */
+		public boolean getStore() {
+			return isOpen;
 		}
 		
 		/**
