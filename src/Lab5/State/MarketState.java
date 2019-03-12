@@ -24,7 +24,8 @@ public class MarketState {
 		private double b_max;
 		private int seed;
 		private FIFO f;
-		
+
+		private int test = 0;
 
 
 		public MarketState(int kassor,int maxCustomers,double arrivalSpeed, double P_min, double P_max,

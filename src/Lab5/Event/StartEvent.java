@@ -9,6 +9,7 @@ import Lab5.State.MarketState;
  */
 public class StartEvent extends Event{
     MarketState marketState;
+    private int test = 0;
 
     public StartEvent(double startTime, EventQueue queue, MarketState marketState) {
         super(startTime, queue);
