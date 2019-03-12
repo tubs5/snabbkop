@@ -12,7 +12,7 @@ public abstract class Event {
     protected EventQueue queue;
 
 
-    public Event(int startTime, EventQueue queue){
+    public Event(double startTime, EventQueue queue){
         this.startTime = startTime;
         this.queue = queue;
     }
