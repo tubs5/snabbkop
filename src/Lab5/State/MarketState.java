@@ -13,7 +13,7 @@ public class MarketState {
 		private int kassor;
 		private boolean isOpen = false;
 		
-		private int completedCustomers;
+		private int completedCustomers = 0;
 		private int missedCustomers;
 		
 		private double timeWasted;
