@@ -4,7 +4,7 @@ package Lab5.State;
  * @author Simon Lundberg
  *
  */
-public class MarketState {
+public class MarketState extends SimState{
 	
 		private int currentCustomers = 0;
 		private int maxCustomers;
