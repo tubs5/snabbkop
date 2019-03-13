@@ -19,6 +19,7 @@ import Lab5.State.SimState;
  */
 public class View extends SimView {
 
+	private SimState Sstate;
 	private MarketState state;
 
 	/**
@@ -29,6 +30,7 @@ public class View extends SimView {
 	 */
 	public View(SimState update) {
 		super(update);
+		this.state = (MarketState) update;
 	}
 /**
  * 

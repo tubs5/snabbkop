@@ -21,6 +21,7 @@ public class Simulator {
 	 * given parameters
 	 */
 	public Simulator(SimView view, EventQueue events, SimState state) {
+		this.emergencystop = false;
 		this.view = view;
 		this.events = events;
 		this.state = state;
@@ -32,7 +33,7 @@ public class Simulator {
 	 */
 	public void start() {
 		view.start();
-		while (!emergencystop) {
+		while (emergencystop == false) {
 			events.getNextEvent().ExecuteEvent();
 		}
 		view.end();
