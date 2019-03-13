@@ -8,7 +8,7 @@ import Lab5.State.MarketState;
  * Created by Tobias Heidlund on 2019-03-08.
  */
 public class StartEvent extends Event{
-    MarketState marketState;
+    private MarketState marketState;
     private int test = 0;
 
     public StartEvent(double startTime, EventQueue queue, MarketState marketState) {
@@ -18,6 +18,9 @@ public class StartEvent extends Event{
 
     @Override
     public void ExecuteEvent() {
+        marketState.openStore();
+
+
         Customer customer = new Customer();
         ArriveEvent arriveEvent = new ArriveEvent(marketState.getTime().getNextCustomer(),queue,marketState,customer);
         queue.addEvent(arriveEvent);
