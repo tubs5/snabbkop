@@ -8,13 +8,16 @@ import Lab5.State.MarketState;
  */
 public class CloseEvent extends Event{
 
+    MarketState marketState;
+
     public CloseEvent(int startTime, EventQueue queue, MarketState marketState) {
         super(startTime, queue);
+        this.marketState = marketState;
     }
 
     @Override
     public void ExecuteEvent() {
-
+        marketState.closeStore();
     }
 
     @Override
