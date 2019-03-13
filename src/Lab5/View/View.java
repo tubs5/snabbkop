@@ -65,7 +65,7 @@ public class View extends SimView {
 			System.out.println(action);
 		}
 		if (!(arg1 instanceof CloseEvent)) {
-			System.out.println(state.getTime() + " " + action + " " +id + state.getStore()+ "" + state.getActiveKassor()+ " " +totallediga + " " + state.getCurrentCustomers() + " " + state.getCompletedCustomers()+" "+ state.getMissedCustomers()+" " + stime);
+			System.out.println(state.getTime() + " " + action + " " +id + state.getStore()+ "" + state.getActiveKassor()+ " " + state.getTotalUnqueueTime() + " " + state.getCurrentCustomers() + " " + state.getCompletedCustomers()+" "+ state.getMissedCustomers()+" " + Kundersomköat + stime);
 		}
 
 	}
