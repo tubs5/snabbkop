@@ -34,12 +34,16 @@ public class ArriveEvent extends Event {
 	 */
 	@Override
 	public void ExecuteEvent() {
+		marketState.observable(this);
 		marketState.getTime().setTime(startTime);
 		if (marketState.getStore()) {
 			Customer customer2 = new Customer();
 			ArriveEvent arriveEvent = new ArriveEvent(marketState.getTime().getNextCustomer(), queue, marketState,
 					customer2);
 			queue.addEvent(arriveEvent);
+
+
+
 			if (marketState.getMaxCustomers() > marketState.getCurrentCustomers()) {
 				marketState.addCurrentCustomers();
 				PickupEvent pickupEvent = new PickupEvent(marketState.getTime().getNextPickupTime(), queue, marketState,
@@ -49,7 +53,7 @@ public class ArriveEvent extends Event {
 				marketState.addMissedCustomers();
 			}
 		}
-		marketState.observable(this);
+
 
 	}
 
