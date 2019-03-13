@@ -18,6 +18,7 @@ public class MarketState extends SimState{
 		private Time time;
 		private double timeWasted = 0;
 		private double totalQueueTime = 0;
+		private double totalUnqueueTime = 0;
 		private double arrivalSpeed;
 		private double P_min;
 		private double P_max;
@@ -191,6 +192,26 @@ public class MarketState extends SimState{
 		 */
 		public void setTotalQueueTime(double d) {
 			totalQueueTime = d;
+		}
+		
+		
+		/**
+		 * This method gets the total amount of time the checkouts were open but not in use 
+		 * 
+		 * @return the total "unqueue time"
+		 */
+		public double getTotalUnqueueTime() {
+			return totalUnqueueTime;
+		}
+		
+		
+		/**
+		 * This method sets the total amount of time the checkouts were open but not in use
+		 * 
+		 * @param i An integer
+		 */
+		public void setTotalUnqueueTime(int i) {
+			totalUnqueueTime = i;
 		}
 		
 		/**
