@@ -68,7 +68,7 @@ public class View extends SimView {
 			System.out.println("999,00" + action);
 		}
 		if (!(arg1 instanceof CloseEvent)) {
-			System.out.println(state.getTime() + " " + action + " " +id + open+ "" + state.getActiveKassor()+ " " + state.getTotalUnqueueTime() + " " + state.getCurrentCustomers() + " " + state.getCompletedCustomers()+" "+ state.getMissedCustomers()+" " + state.getQueueingCustomers() + " "+ state.getTotalQueueTime() + " " + state.getFIFO().getSize() +" "+ state.getFIFO().toString());
+			System.out.println(state.getTime().getTime() + " \t " + action + " \t " +id +" \t "+ open+ " \t " + state.getActiveKassor()+ " \t " + state.getTotalUnqueueTime() + " \t " + state.getCurrentCustomers() + " \t " + state.getCompletedCustomers()+" \t "+ state.getMissedCustomers()+" \t " + state.getQueueingCustomers() + " \t "+ state.getTotalQueueTime() + " \t " + state.getFIFO().getSize() +" \t "+ state.getFIFO().toString());
 		}
 
 	}
