@@ -15,7 +15,6 @@ public class PayEvent extends Event {
 	private Customer customer;
 	private MarketState marketState;
 
-
 	public PayEvent(double startTime, EventQueue queue, MarketState marketState, Customer customer) {
 		super(startTime, queue);
 		this.customer = customer;
