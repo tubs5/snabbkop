@@ -30,34 +30,36 @@ public class View extends SimView {
 	public View(SimState update) {
 		super(update);
 	}
-
+/**
+ * 
+ */
 	public void update(Observable arg0, Object arg1) {
 		String action = null;
 		int id = 0;
-		double qtime = 0;
-		double stime = 0;
+		//double qtime = 0;
+		//double stime = 0;
 
 		// beroende på typ av event behövs olika medelanden,
 		if (arg1 instanceof ArriveEvent) {
 			ArriveEvent event = (ArriveEvent) arg1;
 			action = "Ankomst";
-			id = event.getCustomer().getID();
-			qtime = event.getCustomer().getTimeReturnQueue();
-			stime = event.getCustomer().getTimeReturnStore();
+			//id = event.getCustomer().getID();
+			//qtime = event.getCustomer().getTimeReturnQueue();
+			//stime = event.getCustomer().getTimeReturnStore();
 
 		} else if (arg1 instanceof PayEvent) {
 			PayEvent event = (PayEvent) arg1;
 			action = "Betalning";
-			id = event.getCustomer().getID();
-			qtime = event.getCustomer().getTimeReturnQueue();
-			stime = event.getCustomer().getTimeReturnStore();
+			//id = event.getCustomer().getID();
+			//qtime = event.getCustomer().getTimeReturnQueue();
+			//stime = event.getCustomer().getTimeReturnStore();
 
 		} else if (arg1 instanceof PickupEvent) {
 			PickupEvent event = (PickupEvent) arg1;
 			action = "Plock";
-			id = event.getCustomer().getID();
-			qtime = event.getCustomer().getTimeReturnQueue();
-			stime = event.getCustomer().getTimeReturnStore();
+			//id = event.getCustomer().getID();
+			//qtime = event.getCustomer().getTimeReturnQueue();
+			//stime = event.getCustomer().getTimeReturnStore();
 
 		} else if (arg1 instanceof CloseEvent) {
 			CloseEvent event = (CloseEvent) arg1;
@@ -65,11 +67,13 @@ public class View extends SimView {
 			System.out.println(action);
 		}
 		if (!(arg1 instanceof CloseEvent)) {
-			System.out.println(state.getTime() + " " + action + " " +id + state.getStore()+ "" + state.getActiveKassor()+ " " + state.getTotalUnqueueTime() + " " + state.getCurrentCustomers() + " " + state.getCompletedCustomers()+" "+ state.getMissedCustomers()+" " + Kundersomköat + stime);
+			System.out.println(state.getTime() + " " + action + " " +id + state.getStore()+ "" + state.getActiveKassor()+ " " + state.getTotalUnqueueTime() + " " + state.getCurrentCustomers() + " " + state.getCompletedCustomers()+" "+ state.getMissedCustomers()+" " + state.getQueueingCustomers() + " "+ state.getTotalQueueTime() + " " + state.getFIFO().getSize() +" "+ state.getFIFO().toString());
 		}
 
 	}
-
+/**
+ * Startprint
+ */
 	public void start() {
 		System.out.println("PARAMETRAR");
 		System.out.println("==========");
@@ -82,9 +86,12 @@ public class View extends SimView {
 		System.out.println("");
 		System.out.println("HÄNDELSER");
 		System.out.println("==========");
-		System.out.println("Tid  Händelse  Kund  Öppet  LedKas  LedKasT  Kunder  ");
+		System.out.println("Tid  Händelse  Kund  Öppet  LedKas  LedKasT  Kunder  CompKunder  MissKunder  KöKunder  TotKötid  KöLängd  Kö");
+		System.out.println(state.getTime() +" " + "Start");
 	}
-
+/**
+ * Endprint
+ */
 	public void end() {
 		System.out.println("");
 		System.out.println("RESULTAT");
