@@ -19,7 +19,6 @@ public class StartEvent extends Event{
     @Override
     public void ExecuteEvent() {
         marketState.observable(this);
-
         marketState.openStore();
 
 

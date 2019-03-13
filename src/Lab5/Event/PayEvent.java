@@ -23,20 +23,17 @@ public class PayEvent extends Event {
 
 	@Override
 	public void ExecuteEvent() {
-		marketState.observable(this);
 		marketState.getTime().setTime(startTime);
+		marketState.observable(this);
 		marketState.addCompletedCustomers();
 		marketState.removeCurrentCustomers();
+		marketState.removeActiveKassa();
 		if(customer.getStartQueTime() != 0) {
 			marketState.addTotalQueueTime(marketState.getTime().getTime() - customer.getStartQueTime());
 		}
 
-
-		if (marketState.getActiveKassor() > 0) {
-			marketState.removeActiveKassa();
-		}
-
 		if (marketState.getFIFO().getSize() > 0) {
+			marketState.addActiveKassa();
 			Customer customer2 = marketState.getFIFO().getFirst();
 			PayEvent payEvent2 = new PayEvent(marketState.getTime().getNextPayTime(), queue, marketState, customer2);
 			queue.addEvent(payEvent2);
