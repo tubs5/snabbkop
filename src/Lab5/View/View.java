@@ -18,8 +18,6 @@ import Lab5.State.SimState;
  * 
  */
 public class View extends SimView {
-
-	private SimState Sstate;
 	private MarketState state;
 
 	/**
@@ -36,13 +34,11 @@ public class View extends SimView {
  * 
  */
 	public void update(Observable arg0, Object arg1) {
-		String open = "";
 		String action = null;
 		int id = 0;
+		String open = (state.getStore()) ? "Ö" : "S";
 		//double qtime = 0;
 		//double stime = 0;
-
-		open = (state.getStore()) ? "Ö" : "S";
 		// beroende på typ av event behövs olika medelanden,
 		if (arg1 instanceof ArriveEvent) {
 			ArriveEvent event = (ArriveEvent) arg1;
