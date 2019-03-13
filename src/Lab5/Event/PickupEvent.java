@@ -11,14 +11,18 @@ import Lab5.State.MarketState;
 public class PickupEvent extends Event{
     private Customer customer;
     private MarketState marketState;
-    public PickupEvent(double startTime, EventQueue queue, MarketState simState, Customer customer) {
+    public PickupEvent(double startTime, EventQueue queue, MarketState marketState, Customer customer) {
         super(startTime, queue);
         this.customer = customer;
+        this.marketState = marketState;
     }
 
     @Override
     public void ExecuteEvent() {
-        if (marketState.ka)
+        if (marketState.getActiveKassor() <= marketState.getKassor()){
+            PayEvent payEvent = new PayEvent(marketState.getTime().getTime(),queue,marketState,customer);
+            queue.addEvent(payEvent);
+        }else marketState.getFIFO().add(customer);
 
     }
 
