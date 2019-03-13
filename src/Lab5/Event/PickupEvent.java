@@ -24,6 +24,7 @@ public class PickupEvent extends Event{
             queue.addEvent(payEvent);
         }else marketState.getFIFO().add(customer);
 
+        marketState.notifyObservers(this);
     }
 
     @Override

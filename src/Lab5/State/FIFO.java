@@ -36,14 +36,34 @@ public class FIFO{
 		queue.remove(c);
 	}
 	
+	
+	/**
+	 * This method gets the first item in the queue and also removes it.
+	 * 
+	 * @return First item in the queue.
+	 */
 	public Customer getFirst() {
-		return queue.get(0);
+		Customer c = queue.get(0);
+		queue.remove(0);
+		return c ;
+		
 	}
 	
+	
+	/**
+	 * This method returns the size of the queue
+	 * 
+	 * @return Queue Size
+	 */
 	public int getSize() {
 		return queue.size();
 	}
 	
+	
+	/**
+	 * This method returns the queu as a list
+	 * 
+	 */
 	public String toString() {
 		return Arrays.toString(queue.toArray());
 	}
