@@ -38,7 +38,7 @@ public class FIFO{
 	
 	
 	/**
-	 * This method gets the first item in the queue
+	 * This method gets the first item in the queue and also removes it.
 	 * 
 	 * @return First item in the queue.
 	 */
