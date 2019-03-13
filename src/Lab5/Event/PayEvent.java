@@ -6,8 +6,8 @@ import Lab5.State.MarketState;
 import Lab5.State.FIFO;
 
 /**
- * PayEvent signals that a customer has made a purchase and infroms the program
- * that a customer has left the store and that a new cachier is avalible.
+ * PayEvent signals that a customer has made a purchase and informs the program
+ * that a customer has left the store and that a new cashier is available.
  * 
  * @author Victor Longberg, Tobias Heidlund Simon Lundberg och Klas Mannberg. *
  */
@@ -16,21 +16,6 @@ public class PayEvent extends Event {
 	private MarketState marketState;
 	private FIFO fifo;
 
-	*
-	ArriveEvent signals
-	that an
-	customer has
-	arrived to
-	the store
-	and checks if*
-	he can
-	fit inside
-	the store.
-	It also checks for
-	the potential
-	customers lost*
-	due to
-	a full store.
 
 	public PayEvent(double startTime, EventQueue queue, MarketState marketState, Customer customer) {
 		super(startTime, queue);
