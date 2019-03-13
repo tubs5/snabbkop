@@ -51,7 +51,7 @@ public class View extends SimView {
 			double time = ((double)((int)(a*100)))/100;
 			
 
-			System.out.println(time + " \t " + action + " \t "+ open+ " \t " + state.getActiveKassor()+ " \t " + state.getTotalUnqueueTime() + " \t " + state.getCurrentCustomers() + " \t " + state.getCompletedCustomers()+" \t "+ state.getMissedCustomers()+" \t " + state.getQueueingCustomers() + " \t "+ state.getTotalQueueTime() + " \t " + state.getFIFO().getSize() +" \t "+ state.getFIFO().toString());
+			System.out.println(time + " \t " + action +"\t "+id + " \t "+ open+ " \t " + state.getActiveKassor()+ " \t " + state.getTotalUnqueueTime() + " \t " + state.getCurrentCustomers() + " \t " + state.getCompletedCustomers()+" \t "+ state.getMissedCustomers()+" \t " + state.getQueueingCustomers() + " \t "+ state.getTotalQueueTime() + " \t " + state.getFIFO().getSize() +" \t "+ state.getFIFO().toString());
 
 		} else if (arg1 instanceof PayEvent) {
 			PayEvent event = (PayEvent) arg1;
@@ -63,7 +63,7 @@ public class View extends SimView {
 			double time = ((double)((int)(a*100)))/100;
 			
 
-			System.out.println(time + " \t " + action + " \t "+ open+ " \t " + state.getActiveKassor()+ " \t " + state.getTotalUnqueueTime() + " \t " + state.getCurrentCustomers() + " \t " + state.getCompletedCustomers()+" \t "+ state.getMissedCustomers()+" \t " + state.getQueueingCustomers() + " \t "+ state.getTotalQueueTime() + " \t " + state.getFIFO().getSize() +" \t "+ state.getFIFO().toString());
+			System.out.println(time + " \t " + action +" \t "+id +" \t "+ open+ " \t " + state.getActiveKassor()+ " \t " + state.getTotalUnqueueTime() + " \t " + state.getCurrentCustomers() + " \t " + state.getCompletedCustomers()+" \t "+ state.getMissedCustomers()+" \t " + state.getQueueingCustomers() + " \t "+ state.getTotalQueueTime() + " \t " + state.getFIFO().getSize() +" \t "+ state.getFIFO().toString());
 
 		} else if (arg1 instanceof PickupEvent) {
 			PickupEvent event = (PickupEvent) arg1;
@@ -94,7 +94,7 @@ public class View extends SimView {
 		System.out.println("");
 		System.out.println("HÄNDELSER");
 		System.out.println("==========");
-		System.out.println("Tid  Händelse  Kund  Öppet  LedKas  LedKasT  Kunder  CompKunder  MissKunder  KöKunder  TotKötid  KöLängd  Kö");
+		System.out.println("Tid \t Händelse \t Kund   Öppet LedKas LedKasT Kunder CompKunder MissKunder KöKunder TotKötid KöL Kö");
 		//System.out.println("0,00" +" " + "Start");
 	}
 /**
