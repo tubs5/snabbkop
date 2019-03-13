@@ -21,6 +21,7 @@ public class Simulator {
 	 * given parameters
 	 */
 	public Simulator(SimView view, EventQueue events, SimState state) {
+		this.emergencystop = false;
 		this.view = view;
 		this.events = events;
 		this.state = state;
