@@ -23,6 +23,7 @@ public class MainSim {
 		double B_max = 4;
 		int seed = 1234;
 
+	
 		EventQueue events = new EventQueue();
 		MarketState state = new MarketState(kassor,maxCustomers,arrivalSpeed,P_min,P_max,B_min,B_max,seed);
 		View view = new View(state);
