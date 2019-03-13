@@ -11,18 +11,21 @@ public class PayEvent extends Event{
     private Customer customer;
     private MarketState marketState;
     
-    public PayEvent(double startTime, EventQueue queue, MarketState marketState)
+    public PayEvent(double startTime, EventQueue queue, MarketState marketState, Customer customer)
     {
         super(startTime, queue);
+        this.customer = customer;
+        this.marketState = marketState;
     }
 
     @Override
     public void ExecuteEvent() {
     	marketState.addCompletedCustomers();
-    	marketState.removeCompletedCustomers();
+    	//marketState.removeCurrentCustomers();
     	if (marketState.getActiveKassor() > 0) {
     		marketState.removeActiveKassa();
     	}
+    	 
     }
 
     @Override
