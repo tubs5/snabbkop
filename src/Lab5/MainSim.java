@@ -33,7 +33,7 @@ public class MainSim {
         StartEvent startEvent = new StartEvent(0,events,state);
 		events.addEvent(startEvent);
 
-		CloseEvent closeEvent = new CloseEvent(2000,events,state);
+		CloseEvent closeEvent = new CloseEvent(20,events,state);
 		events.addEvent(closeEvent);
 
 		Simulator Market = new Simulator(view, events, state);

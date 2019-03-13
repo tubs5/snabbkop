@@ -33,8 +33,9 @@ public class View extends SimView {
 /**
  * 
  */
-	public void update(Observable arg0, Object arg1) {
-		String action = null;
+	@Override
+	public void update(Observable o, Object arg1) {
+	String action = null;
 		int id = 0;
 		String open = (state.getStore()) ? "Ö" : "S";
 		//double qtime = 0;
@@ -104,5 +105,7 @@ public class View extends SimView {
 				+ ". Genomsnittlig ledig tid blev " + state.getTotalQueueTime() / state.getMaxCustomers());
 
 	}
+
+
 
 }

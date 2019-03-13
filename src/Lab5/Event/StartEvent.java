@@ -25,7 +25,7 @@ public class StartEvent extends Event{
         ArriveEvent arriveEvent = new ArriveEvent(marketState.getTime().getNextCustomer(),queue,marketState,customer);
         queue.addEvent(arriveEvent);
 
-        marketState.notifyObservers(this);
+        marketState.observable(this);
     }
 
     @Override

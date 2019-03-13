@@ -35,7 +35,7 @@ public class PayEvent extends Event {
 			PayEvent payEvent2 = new PayEvent(marketState.getTime().getNextPayTime(), queue, marketState, customer2);
 			queue.addEvent(payEvent2);
 		}
-		marketState.notifyObservers(this);
+		marketState.observable(this);
 	}
 
 	@Override

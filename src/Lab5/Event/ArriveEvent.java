@@ -49,7 +49,7 @@ public class ArriveEvent extends Event {
 				marketState.addMissedCustomers();
 			}
 		}
-		marketState.notifyObservers(this);
+		marketState.observable(this);
 	}
 
 	/**
