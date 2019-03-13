@@ -4,30 +4,48 @@ import Lab5.Queue.EventQueue;
 import Lab5.State.*;
 
 /**
- * Created by Tobias Heidlund on 2019-03-08.
+ * ArriveEvent signals that an customer has arrived to the store and checks if
+ * he can fit inside the store. It also checks for the potential customers lost
+ * due to a full store.
+ * 
+ * @author Victor Longberg, Tobias Heidlund Simon Lundberg och Klas Mannberg.
+ *
  */
 public class ArriveEvent extends Event {
+	
 	private Customer customer;
-    private MarketState marketState;
-
+	private MarketState marketState;
+	
+	/**
+	 * 
+	 * @param startTime, The time the event is called. 
+	 * @param queue, the queue of events.
+	 * @param marketState, the state of the market.
+	 * @param customer, the customer id.
+	 */
 	public ArriveEvent(double startTime, EventQueue queue, MarketState marketState, Customer customer) {
 		super(startTime, queue);
 		this.customer = customer;
 	}
-
+	
+	/**
+	 * Executes the Events and is notifying the observer of all changes.
+	 */
 	@Override
 	public void ExecuteEvent() {
-		if ( marketState.getStore()) {
-	        Customer customer2 = new Customer();
-	        ArriveEvent arriveEvent = new ArriveEvent(marketState.getTime().getNextCustomer(), queue,marketState,customer2);
-	        queue.addEvent(arriveEvent);
-		if (marketState.getMaxCustomers() <= marketState.getCurrentCustomers()) {
-			marketState.addCurrentCustomers();
-	        PickupEvent pickupEvent = new PickupEvent(marketState.getTime().getNextCustomer(), queue,marketState,customer);
-	        queue.addEvent(pickupEvent);
-		} else {
-			marketState.addMissedCustomers();
-		}
+		if (marketState.getStore()) {
+			Customer customer2 = new Customer();
+			ArriveEvent arriveEvent = new ArriveEvent(marketState.getTime().getNextCustomer(), queue, marketState,
+					customer2);
+			queue.addEvent(arriveEvent);
+			if (marketState.getMaxCustomers() <= marketState.getCurrentCustomers()) {
+				marketState.addCurrentCustomers();
+				PickupEvent pickupEvent = new PickupEvent(marketState.getTime().getNextCustomer(), queue, marketState,
+						customer);
+				queue.addEvent(pickupEvent);
+			} else {
+				marketState.addMissedCustomers();
+			}
 		}
 		marketState.notifyObservers(this);
 	}
