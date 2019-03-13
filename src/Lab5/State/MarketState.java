@@ -15,9 +15,11 @@ public class MarketState extends SimState{
 		private boolean isOpen = false;
 		private int completedCustomers = 0;
 		private int missedCustomers = 0;
+		private int queueingCustomers = 0;
 		private Time time;
 		private double timeWasted = 0;
 		private double totalQueueTime = 0;
+		private double totalUnqueueTime = 0;
 		private double arrivalSpeed;
 		private double P_min;
 		private double P_max;
@@ -193,6 +195,26 @@ public class MarketState extends SimState{
 			totalQueueTime = d;
 		}
 		
+		
+		/**
+		 * This method gets the total amount of time the checkouts were open but not in use 
+		 * 
+		 * @return the total "unqueue time"
+		 */
+		public double getTotalUnqueueTime() {
+			return totalUnqueueTime;
+		}
+		
+		
+		/**
+		 * This method sets the total amount of time the checkouts were open but not in use
+		 * 
+		 * @param i An integer
+		 */
+		public void setTotalUnqueueTime(int i) {
+			totalUnqueueTime = i;
+		}
+		
 		/**
 		 * This method returns the total amount of time wasted.
 		 * 
@@ -266,6 +288,53 @@ public class MarketState extends SimState{
 		 */
 		public void addCompletedCustomers() {
 			completedCustomers++;
+		}
+		
+		
+		/**
+		 * This method removes a completed customer.
+		 * 
+		 */
+		public void removeCompletedCustomers() {
+			completedCustomers--;
+		}
+		
+		
+		/**
+		 * This method gets the amount of queueing customers
+		 * 
+		 * @return The amount of queueing customers
+		 */
+		public int getQueueingCustomers() {
+			return queueingCustomers;
+		}
+		
+		
+		/**
+		 * This method sets the amount of queueing customers
+		 * 
+		 * @param i An integer
+		 */
+		public void setQueueingCustomers(int i) {
+			queueingCustomers = i;
+		}
+		
+		
+		/**
+		 * This method adds a queueing customer
+		 * 
+		 */
+		public void addQueueingCustomers() {
+			queueingCustomers++;
+		}
+		
+		
+		/**
+		 * This method removes a queueing customer
+		 * 
+		 */
+		public void removeQueueingCustomers() {
+			queueingCustomers--;
 		}
 		
 		/**
