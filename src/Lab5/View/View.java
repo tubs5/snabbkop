@@ -54,7 +54,7 @@ public class View extends SimView {
 			double timeb = ((double)((int)(b*100)))/100;
 
 
-			System.out.println(time + " \t " + action +"\t "+id + " \t "+ open+ " \t " + state.getActiveKassor()+ " \t " + timeb + " \t " + state.getCurrentCustomers() + " \t " + state.getCompletedCustomers()+" \t "+ state.getMissedCustomers()+" \t " + state.getQueueingCustomers() + " \t "+ state.getTotalQueueTime() + " \t " + state.getFIFO().getSize() +" \t "+ state.getFIFO().toString());
+			System.out.println(time + " \t " + action +"\t "+id + " \t "+ open+ " \t " + (state.getKassor() - state.getActiveKassor())+ " \t " + timeb + " \t " + state.getCurrentCustomers() + " \t " + state.getCompletedCustomers()+" \t "+ state.getMissedCustomers()+" \t " + state.getQueueingCustomers() + " \t "+ state.getTotalQueueTime() + " \t " + state.getFIFO().getSize() +" \t "+ state.getFIFO().toString());
 
 		} else if (arg1 instanceof PayEvent) {
 			PayEvent event = (PayEvent) arg1;
@@ -68,7 +68,7 @@ public class View extends SimView {
 			double timeb = ((double)((int)(b*100)))/100;
 			
 
-			System.out.println(time + " \t " + action +" \t "+id +" \t "+ open+ " \t " + state.getActiveKassor()+ " \t " + timeb + " \t " + state.getCurrentCustomers() + " \t " + state.getCompletedCustomers()+" \t "+ state.getMissedCustomers()+" \t " + state.getQueueingCustomers() + " \t "+ state.getTotalQueueTime() + " \t " + state.getFIFO().getSize() +" \t "+ state.getFIFO().toString());
+			System.out.println(time + " \t " + action +" \t "+id +" \t "+ open+ " \t " + (state.getKassor() - state.getActiveKassor())+ " \t " + timeb + " \t " + state.getCurrentCustomers() + " \t " + state.getCompletedCustomers()+" \t "+ state.getMissedCustomers()+" \t " + state.getQueueingCustomers() + " \t "+ state.getTotalQueueTime() + " \t " + state.getFIFO().getSize() +" \t "+ state.getFIFO().toString());
 
 		} else if (arg1 instanceof PickupEvent) {
 			PickupEvent event = (PickupEvent) arg1;
