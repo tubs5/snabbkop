@@ -16,13 +16,7 @@ public class optimize {
 	public static void main(String[] args) {
 		
 	}
-	MarketState one(int kassor) {
-		return state;
-	}
-	void two( ) {
-		return state.getKassor();
-		
-	}
+
 	void three() {
 		
 	}

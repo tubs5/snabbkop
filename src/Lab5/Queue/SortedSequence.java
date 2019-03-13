@@ -8,7 +8,7 @@ import java.util.ArrayList;
  * Created by Tobias Heidlund on 2019-03-08.
  */
 public class SortedSequence {
-    ArrayList<Event> events = new ArrayList<Event>();
+    private ArrayList<Event> events = new ArrayList<Event>();
 
     public Event getNextEvent(){
         Event e = events.get(0);
@@ -18,6 +18,10 @@ public class SortedSequence {
 
     public void addEvent(Event e){
        double startTime = e.getStartTime();
+       if(events.size() == 0){
+           events.add(e);
+           return;
+       }
         for (int i = 0; i < events.size(); i++) {
             if(events.get(i).getStartTime()<=startTime){
                 events.add(i,e);
@@ -26,6 +30,9 @@ public class SortedSequence {
         }
     }
 
+    public boolean hasNext(){
+        return events.size() != 0;
+    }
 
 
 }
