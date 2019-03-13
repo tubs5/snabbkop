@@ -24,6 +24,7 @@ public class PayEvent extends Event {
 
 	@Override
 	public void ExecuteEvent() {
+		marketState.getTime().setTime(startTime);
 		marketState.addCompletedCustomers();
 		marketState.removeCurrentCustomers();
 		if (marketState.getActiveKassor() > 0) {

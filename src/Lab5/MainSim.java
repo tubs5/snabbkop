@@ -1,5 +1,6 @@
 package Lab5;
 
+import Lab5.Event.CloseEvent;
 import Lab5.Event.StartEvent;
 import Lab5.Queue.EventQueue;
 import Lab5.State.MarketState;
@@ -27,10 +28,14 @@ public class MainSim {
 		EventQueue events = new EventQueue();
 		MarketState state = new MarketState(kassor,maxCustomers,arrivalSpeed,P_min,P_max,B_min,B_max,seed);
 		View view = new View(state);
-
+		state.addObserver(view);
 
         StartEvent startEvent = new StartEvent(0,events,state);
 		events.addEvent(startEvent);
+
+		CloseEvent closeEvent = new CloseEvent(2000,events,state);
+		events.addEvent(closeEvent);
+
 		Simulator Market = new Simulator(view, events, state);
 		Market.start();
 	}

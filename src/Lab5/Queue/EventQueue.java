@@ -26,4 +26,8 @@ public class EventQueue {
         sequence.addEvent(event);
     }
 
+    public boolean hasNext(){
+        return sequence.hasNext();
+    }
+
 }

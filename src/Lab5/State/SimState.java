@@ -42,15 +42,15 @@ public class SimState extends Observable {
 	
 	/**
 	 * This method updates the state
-	 * 
+	 *
 	 */
 	public void update() {
-		
+
 	}
-	
+
 	/**
 	 * This method takes an Event and notifies observers
-	 * 
+	 *
 	 * @param eventname An Event
 	 */
 	public void observable(Event eventname) {
