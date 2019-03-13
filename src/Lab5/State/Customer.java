@@ -10,8 +10,12 @@ public class Customer {
 	private int customerID;
 	private double timeInStore;
 	private double timeInQueue;
-	
-	
+	private static int customerids = 0;
+
+	public Customer(){
+		customerID = customerids++;
+	}
+
 	/**
 	 * This method return the total time the customer spent in the store.
 	 * 
@@ -59,15 +63,5 @@ public class Customer {
 	public int getID() {
 		return customerID;
 	}
-	
-	/**
-	 * This method sets the customers ID.
-	 * 
-	 * @param i An integer
-	 */
-	public void setID(int i) {
-		customerID = i;
-	}
-	
 	
 }
