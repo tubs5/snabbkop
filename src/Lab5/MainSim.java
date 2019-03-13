@@ -8,7 +8,7 @@ import Lab5.View.View;
 /**
  * Creates new simulation
  * 
- * @author Klas Mannberg
+ * @author Victor Longberg, Tobias Heidlund, Simon Lundberg och Klas Mannberg.
  * @version 1.1
  * @since 2019-03-08
  */

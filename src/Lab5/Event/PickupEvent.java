@@ -20,9 +20,12 @@ public class PickupEvent extends Event{
     @Override
     public void ExecuteEvent() {
         if (marketState.getActiveKassor() <= marketState.getKassor()){
-            PayEvent payEvent = new PayEvent(marketState.getTime().getTime(),queue,marketState,customer);
+            PayEvent payEvent = new PayEvent(marketState.getTime().getNextPayTime(),queue,marketState,customer);
             queue.addEvent(payEvent);
-        }else marketState.getFIFO().add(customer);
+        }else{
+            marketState.getFIFO().add(customer);
+            marketState.addQueueingCustomers();
+        }
 
         marketState.notifyObservers(this);
     }

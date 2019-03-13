@@ -2,12 +2,13 @@ package Lab5.View;
 
 import java.util.Observer;
 
+import Lab5.State.MarketState;
 import Lab5.State.SimState;
 
 /**
  * Abstract class for simulator views
  * 
- * @author Klas Mannberg
+ * @author Victor Longberg, Tobias Heidlund, Simon Lundberg och Klas Mannberg.
  * @version 1.0
  * @since 2019-03-08
  * 
