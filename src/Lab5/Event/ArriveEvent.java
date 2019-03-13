@@ -26,7 +26,8 @@ public class ArriveEvent extends Event {
 	public ArriveEvent(double startTime, EventQueue queue, MarketState marketState, Customer customer) {
 		super(startTime, queue);
 		this.customer = customer;
-	}
+		this.marketState = marketState;
+			}
 	
 	/**
 	 * Executes the Events and is notifying the observer of all changes.
@@ -49,12 +50,19 @@ public class ArriveEvent extends Event {
 		}
 		marketState.notifyObservers(this);
 	}
-
+	/**
+	 * Sends over information about the time.
+	 * @return startTime.
+	 */
 	@Override
 	public double getStartTime() {
 		return startTime;
 	}
-
+	
+	/**
+	 * Sends over information about the customer.
+	 * @return customer.
+	 */
 	public Customer getCustomer() {
 		return customer;
 	}
