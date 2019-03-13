@@ -63,5 +63,9 @@ public class Customer {
 	public int getID() {
 		return customerID;
 	}
-	
+
+	@Override
+	public String toString() {
+		return ""+customerID;
+	}
 }
