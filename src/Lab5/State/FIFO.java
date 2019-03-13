@@ -1,6 +1,7 @@
 package Lab5.State;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Queue;
 /**
  * 
@@ -33,5 +34,17 @@ public class FIFO{
 	 */
 	public void remove(Customer c) {
 		queue.remove(c);
+	}
+	
+	public Customer getFirst() {
+		return queue.get(0);
+	}
+	
+	public int getSize() {
+		return queue.size();
+	}
+	
+	public String toString() {
+		return Arrays.toString(queue.toArray());
 	}
 }
