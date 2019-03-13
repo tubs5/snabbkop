@@ -122,13 +122,14 @@ public class View extends SimView {
 	public void end() {
 		double time = ((double)((int)(state.getTotalQueueTime() / (state.getMissedCustomers()+state.getCompletedCustomers())*100)))/100;
 		double timea = ((double)((int)(state.getTotalQueueTime()*100)))/100;
+		double timeb = ((double)((int)((state.getTotalUnqueueTime()-state.getTotalQueueTime())*100)))/100;
 		System.out.println("");
 		System.out.println("RESULTAT");
 		System.out.println("==========");
 		System.out.println("1) Av " + (state.getMissedCustomers()+state.getCompletedCustomers()) + " kunder behandlades " + state.getCompletedCustomers()
 				+ " medans " + state.getMissedCustomers() + " kunder missades");
-		System.out.println("2) Total ledig tid från " + state.getKassor() + " kassor blev " + state.getTimeWasted()
-				+ ". Genomsnittlig ledig tid per kassa blev " + state.getTimeWasted() / state.getKassor());
+		System.out.println("2) Total ledig tid från " + state.getKassor() + " kassor blev " + timeb
+				+ ". Genomsnittlig ledig tid per kassa blev " + timeb/state.getKassor());
 		System.out.println("3) Total kötid för " + state.getMaxCustomers() + " kunder blev " + timea
 				+ ". Genomsnittlig kötid blev " + time );
 
