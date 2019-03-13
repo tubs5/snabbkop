@@ -42,7 +42,7 @@ public class ArriveEvent extends Event {
 			queue.addEvent(arriveEvent);
 			if (marketState.getMaxCustomers() > marketState.getCurrentCustomers()) {
 				marketState.addCurrentCustomers();
-				PickupEvent pickupEvent = new PickupEvent(marketState.getTime().getNextCustomer(), queue, marketState,
+				PickupEvent pickupEvent = new PickupEvent(marketState.getTime().getNextPickupTime(), queue, marketState,
 						customer);
 				queue.addEvent(pickupEvent);
 			} else {
@@ -50,6 +50,7 @@ public class ArriveEvent extends Event {
 			}
 		}
 		marketState.observable(this);
+
 	}
 
 	/**
