@@ -14,7 +14,6 @@ import Lab5.State.FIFO;
 public class PayEvent extends Event {
 	private Customer customer;
 	private MarketState marketState;
-	private FIFO fifo;
 
 
 	public PayEvent(double startTime, EventQueue queue, MarketState marketState, Customer customer) {
@@ -31,10 +30,9 @@ public class PayEvent extends Event {
 		if (marketState.getActiveKassor() > 0) {
 			marketState.removeActiveKassa();
 		}
-		PayEvent payEvent = new PayEvent(marketState.getTime().getNextPayTime(), queue, marketState, customer);
-		queue.addEvent(payEvent);
-		if (fifo.getSize() < 0) {
-			Customer customer2 = fifo.getFirst();
+
+		if (marketState.getFIFO().getSize() > 0) {
+			Customer customer2 = marketState.getFIFO().getFirst();
 			PayEvent payEvent2 = new PayEvent(marketState.getTime().getNextPayTime(), queue, marketState, customer2);
 			queue.addEvent(payEvent2);
 		}

@@ -15,7 +15,7 @@ import Lab5.View.View;
  */
 public class MainSim {
 	public static void main(String[] args) {
-		int kassor  = 2;
+		int kassor  = 10;
 		int maxCustomers = 10;
 		double arrivalSpeed = 2;
 		double P_min = 3;

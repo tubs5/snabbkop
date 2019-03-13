@@ -23,11 +23,12 @@ public class SortedSequence {
            return;
        }
         for (int i = 0; i < events.size(); i++) {
-            if(events.get(i).getStartTime()<=startTime){
+            if(events.get(i).getStartTime()>=startTime){
                 events.add(i,e);
-                break;
+                return;
             }
         }
+        events.add(e);
     }
 
     public boolean hasNext(){

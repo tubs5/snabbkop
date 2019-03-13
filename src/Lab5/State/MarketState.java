@@ -10,7 +10,7 @@ public class MarketState extends SimState{
 		private int maxCustomers;
 		
 		private boolean emergencyStop = false;
-		private int kassor = 0;
+		private int kassor;
 		private int activeKassor= 0;
 		private boolean isOpen = false;
 		private int completedCustomers = 0;
