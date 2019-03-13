@@ -2,7 +2,6 @@ package Lab5.View;
 
 import java.util.Observer;
 
-import Lab5.State.MarketState;
 import Lab5.State.SimState;
 
 /**
@@ -20,7 +19,7 @@ public abstract class SimView implements Observer {
 	/**
 	 * Takes parameter to update sState
 	 */
-	public SimView(SimState update) {
+	protected SimView(SimState update) {
 		this.sState = update;
 	}
 
