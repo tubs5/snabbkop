@@ -9,15 +9,20 @@ import Lab5.State.MarketState;
  */
 public class PayEvent extends Event{
     private Customer customer;
-
-    public PayEvent(int startTime, EventQueue queue, MarketState marketState)
+    private MarketState marketState;
+    
+    public PayEvent(double startTime, EventQueue queue, MarketState marketState)
     {
         super(startTime, queue);
     }
 
     @Override
     public void ExecuteEvent() {
-
+    	marketState.addCompletedCustomers();
+    	marketState.removeCompletedCustomers();
+    	if (marketState.getActiveKassor() > 0) {
+    		marketState.removeActiveKassa();
+    	}
     }
 
     @Override
