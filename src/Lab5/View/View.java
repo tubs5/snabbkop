@@ -43,26 +43,26 @@ public class View extends SimView {
 		if (arg1 instanceof ArriveEvent) {
 			ArriveEvent event = (ArriveEvent) arg1;
 			action = "Ankomst";
-			//id = event.getCustomer().getID();
+			id = event.getCustomer().getID();
 			//qtime = event.getCustomer().getTimeReturnQueue();
 			//stime = event.getCustomer().getTimeReturnStore();
 
 		} else if (arg1 instanceof PayEvent) {
 			PayEvent event = (PayEvent) arg1;
 			action = "Betalning";
-			//id = event.getCustomer().getID();
+			id = event.getCustomer().getID();
 			//qtime = event.getCustomer().getTimeReturnQueue();
 			//stime = event.getCustomer().getTimeReturnStore();
 
 		} else if (arg1 instanceof PickupEvent) {
 			PickupEvent event = (PickupEvent) arg1;
 			action = "Plock";
-			//id = event.getCustomer().getID();
+			id = event.getCustomer().getID();
 			//qtime = event.getCustomer().getTimeReturnQueue();
 			//stime = event.getCustomer().getTimeReturnStore();
 
 		} else if (arg1 instanceof CloseEvent) {
-			CloseEvent event = (CloseEvent) arg1;
+			//CloseEvent event = (CloseEvent) arg1;
 			action = "Close";
 			System.out.println(action);
 		}
