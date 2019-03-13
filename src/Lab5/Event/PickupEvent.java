@@ -19,6 +19,7 @@ public class PickupEvent extends Event{
 
     @Override
     public void ExecuteEvent() {
+        marketState.observable(this);
         marketState.getTime().setTime(startTime);
         if (marketState.getActiveKassor() < marketState.getKassor()){
             marketState.addActiveKassa();
@@ -32,7 +33,7 @@ public class PickupEvent extends Event{
             marketState.addQueueingCustomers();
         }
 
-        marketState.observable(this);
+
     }
 
     @Override

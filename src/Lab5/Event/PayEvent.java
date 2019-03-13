@@ -23,6 +23,7 @@ public class PayEvent extends Event {
 
 	@Override
 	public void ExecuteEvent() {
+		marketState.observable(this);
 		marketState.getTime().setTime(startTime);
 		marketState.addCompletedCustomers();
 		marketState.removeCurrentCustomers();
@@ -40,7 +41,7 @@ public class PayEvent extends Event {
 			PayEvent payEvent2 = new PayEvent(marketState.getTime().getNextPayTime(), queue, marketState, customer2);
 			queue.addEvent(payEvent2);
 		}
-		marketState.observable(this);
+
 	}
 
 	@Override
