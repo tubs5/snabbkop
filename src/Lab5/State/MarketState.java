@@ -111,7 +111,7 @@ public class MarketState extends SimState{
 		}
 		
 		
-		
+
 		
 		
 		/**
@@ -173,12 +173,12 @@ public class MarketState extends SimState{
 		
 		
 		/**
-		 * This method sets the total amount of time spent in queues.
+		 * This method add the total amount of time spent in queues.
 		 * 
 		 * @param d A double
 		 */
-		public void setTotalQueueTime(double d) {
-			totalQueueTime = d;
+		public void addTotalQueueTime(double d) {
+			totalQueueTime += d;
 		}
 		
 		
@@ -193,12 +193,12 @@ public class MarketState extends SimState{
 		
 		
 		/**
-		 * This method sets the total amount of time the checkouts were open but not in use
+		 * This method add the total amount of time the checkouts were open but not in use
 		 * 
 		 * @param i An integer
 		 */
-		public void setTotalUnqueueTime(int i) {
-			totalUnqueueTime = i;
+		public void addTotalUnqueueTime(int i) {
+			totalUnqueueTime += i;
 		}
 		
 		/**
@@ -228,17 +228,7 @@ public class MarketState extends SimState{
 		public int getMissedCustomers() {
 			return missedCustomers;
 		}
-		
-		
-		/**
-		 * This method sets the amount of missed customers.
-		 * 
-		 * @param i An integer
-		 */
-		public void setMissedCustomers(int i) {
-			missedCustomers = i;
-		}
-		
+
 		
 		/**
 		 * This method adds a missed customer. 
@@ -258,14 +248,6 @@ public class MarketState extends SimState{
 		}
 		
 		
-		/**
-		 * This method sets the amount of completed customers.
-		 * 
-		 * @param i An integer
-		 */
-		public void setCompletedCustomers(int i) {
-			completedCustomers = i;
-		}
 		
 		
 		/**
