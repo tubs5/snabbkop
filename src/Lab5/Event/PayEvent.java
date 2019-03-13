@@ -26,6 +26,11 @@ public class PayEvent extends Event {
 		marketState.getTime().setTime(startTime);
 		marketState.addCompletedCustomers();
 		marketState.removeCurrentCustomers();
+		if(customer.getStartQueTime() != 0) {
+			marketState.addTotalQueueTime(marketState.getTime().getTime() - customer.getStartQueTime());
+		}
+
+
 		if (marketState.getActiveKassor() > 0) {
 			marketState.removeActiveKassa();
 		}

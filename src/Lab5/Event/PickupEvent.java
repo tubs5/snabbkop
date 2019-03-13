@@ -27,6 +27,7 @@ public class PickupEvent extends Event{
             PayEvent payEvent = new PayEvent(marketState.getTime().getNextPayTime(),queue,marketState,customer);
             queue.addEvent(payEvent);
         }else{
+            customer.setStartQueTime(marketState.getTime().getTime());
             marketState.getFIFO().add(customer);
             marketState.addQueueingCustomers();
         }

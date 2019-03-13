@@ -12,6 +12,16 @@ public class Customer {
 	private double timeInQueue;
 	private static int customerids = 0;
 
+	public double getStartQueTime() {
+		return startQueTime;
+	}
+
+	public void setStartQueTime(double startQueTime) {
+		this.startQueTime = startQueTime;
+	}
+
+	private double startQueTime = 0;
+
 	public Customer(){
 		customerID = customerids++;
 	}
