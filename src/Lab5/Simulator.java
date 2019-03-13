@@ -7,7 +7,7 @@ import Lab5.Queue.*;
 /**
  * Runs simulation
  * 
- * @author Klas Mannberg
+ * @author Victor Longberg, Tobias Heidlund, Simon Lundberg och Klas Mannberg.
  * @version 0.9
  * @since 2019-03-08
  */

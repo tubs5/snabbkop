@@ -12,7 +12,7 @@ import Lab5.State.SimState;
 /**
  * Prints start parameters, results and events
  * 
- * @author Klas Mannberg
+ * @author Victor Longberg, Tobias Heidlund, Simon Lundberg och Klas Mannberg.
  * @version 0.9
  * @since 2019-03-08
  * 

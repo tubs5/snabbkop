@@ -8,7 +8,7 @@ import Lab5.State.SimState;
 /**
  * Abstract class for simulator views
  * 
- * @author Klas Mannberg
+ * @author Victor Longberg, Tobias Heidlund, Simon Lundberg och Klas Mannberg.
  * @version 1.0
  * @since 2019-03-08
  * 
