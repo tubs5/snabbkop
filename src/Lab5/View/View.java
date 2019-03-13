@@ -75,7 +75,7 @@ public class View extends SimView {
 		} else if (arg1 instanceof CloseEvent) {
 			//CloseEvent event = (CloseEvent) arg1;
 			action = "Close";
-			System.out.println("999,00" + action);
+			System.out.println("999.0" +" \t " + action);
 		}
 
 	}
@@ -104,7 +104,7 @@ public class View extends SimView {
 		System.out.println("");
 		System.out.println("RESULTAT");
 		System.out.println("==========");
-		System.out.println("1) Av " + state.getMaxCustomers() + " kunder behandlades " + state.getCompletedCustomers()
+		System.out.println("1) Av " + (state.getMissedCustomers()+state.getCompletedCustomers()) + " kunder behandlades " + state.getCompletedCustomers()
 				+ " medans " + state.getMissedCustomers() + " kunder missades");
 		System.out.println("2) Total ledig tid från " + state.getKassor() + " kassor blev " + state.getTimeWasted()
 				+ ". Genomsnittlig ledig tid blev " + state.getTimeWasted() / state.getKassor());
