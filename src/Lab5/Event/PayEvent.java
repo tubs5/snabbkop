@@ -29,11 +29,11 @@ public class PayEvent extends Event{
     	if (marketState.getActiveKassor() > 0) {
     		marketState.removeActiveKassa();
     	}
-        PayEvent payEvent = new PayEvent(marketState.getTime().getNextCustomer(), queue,marketState,customer);
+        PayEvent payEvent = new PayEvent(marketState.getTime().getNextPayTime(), queue,marketState,customer);
         queue.addEvent(payEvent);   
         if (fifo.getSize() < 0 ) {
         	Customer customer2 =fifo.getFirst();
-        	  PayEvent payEvent2 = new PayEvent(marketState.getTime().getNextCustomer(), queue,marketState,customer2);
+        	  PayEvent payEvent2 = new PayEvent(marketState.getTime().getNextPayTime(), queue,marketState,customer2);
               queue.addEvent(payEvent2); 	
         }
         marketState.notifyObservers(this);
