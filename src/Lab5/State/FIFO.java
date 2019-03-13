@@ -43,7 +43,10 @@ public class FIFO{
 	 * @return First item in the queue.
 	 */
 	public Customer getFirst() {
-		return queue.get(0);
+		Customer c = queue.get(0);
+		queue.remove(0);
+		return c ;
+		
 	}
 	
 	
