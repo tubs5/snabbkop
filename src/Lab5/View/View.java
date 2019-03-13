@@ -89,7 +89,7 @@ public class View extends SimView {
 		System.out.println("HÄNDELSER");
 		System.out.println("==========");
 		System.out.println("Tid  Händelse  Kund  Öppet  LedKas  LedKasT  Kunder  CompKunder  MissKunder  KöKunder  TotKötid  KöLängd  Kö");
-		System.out.println(state.getTime() +" " + "Start");
+		System.out.println("0,00" +" " + "Start");
 	}
 /**
  * Endprint
