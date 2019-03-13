@@ -114,7 +114,7 @@ public class View extends SimView {
 		System.out.println("HÄNDELSER");
 		System.out.println("==========");
 		System.out.println("Tid \t Händelse \t Kund \t Öppet \t LedKas  LedKaT  Kunder  CKund   MKund   KKunder TKötid  KöL     Kö");
-		//System.out.println("0,00" +" " + "Start");
+		System.out.println("0.00" +" " + " \t Start");
 	}
 /**
  * Endprint
