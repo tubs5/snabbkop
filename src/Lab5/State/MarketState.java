@@ -8,7 +8,7 @@ public class MarketState extends SimState{
 	
 		private int currentCustomers = 0;
 		private int maxCustomers;
-		
+		private double lastCheckedUnqueTime = 0;
 		private boolean emergencyStop = false;
 		private int kassor;
 		private int activeKassor= 0;
@@ -44,10 +44,9 @@ public class MarketState extends SimState{
 			time = new Time(this);
 		}
 
-		
 		/**
 		 * This method returns the time
-		 * 
+		 *
 		 * @return The time
 		 */
 		public Time getTime() {
@@ -194,13 +193,17 @@ public class MarketState extends SimState{
 		
 		/**
 		 * This method add the total amount of time the checkouts were open but not in use
-		 * 
-		 * @param i An integer
+		 *
 		 */
-		public void addTotalUnqueueTime(int i) {
-			totalUnqueueTime += i;
+		public void addTotalUnqueueTime() {
+
+			double timechecked = time.getTime()-lastCheckedUnqueTime;
+			lastCheckedUnqueTime = time.getTime();
+			totalUnqueueTime += timechecked*(kassor-activeKassor);
 		}
-		
+
+
+
 		/**
 		 * This method returns the total amount of time wasted.
 		 * 

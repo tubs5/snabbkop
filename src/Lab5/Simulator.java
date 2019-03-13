@@ -25,6 +25,7 @@ public class Simulator {
 		this.view = view;
 		this.events = events;
 		this.state = state;
+
 	}
 
 	/**
