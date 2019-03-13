@@ -74,6 +74,13 @@ public class View extends SimView {
 			id = event.getCustomer().getID();
 			//qtime = event.getCustomer().getTimeReturnQueue();
 			//stime = event.getCustomer().getTimeReturnStore();
+			double time = ((double)((int)(state.getTime().getTime()*100)))/100;
+			double timeb = ((double)((int)(state.getTotalUnqueueTime()*100)))/100;
+			double timec = ((double)((int)(state.getTotalQueueTime()*100)))/100;
+			
+
+			System.out.println(time + " \t " + action +" \t  \t "+ id +" \t " + open+ " \t " + (state.getKassor() - state.getActiveKassor())+ " \t " + timeb + " \t " + state.getCurrentCustomers() + " \t " + state.getCompletedCustomers()+" \t "+ state.getMissedCustomers()+" \t " + state.getQueueingCustomers() + " \t "+ timec + " \t " + state.getFIFO().getSize() +" \t "+ state.getFIFO().toString());
+
 
 		} else if (arg1 instanceof CloseEvent) {
 			//CloseEvent event = (CloseEvent) arg1;
