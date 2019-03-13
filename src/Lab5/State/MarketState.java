@@ -111,14 +111,7 @@ public class MarketState extends SimState{
 		}
 		
 		
-		/**
-		 * This method sets the maximum amount of customers
-		 * 
-		 * @param i An integer
-		 */
-		public void setMaxCustomers(int i) {
-			maxCustomers = i;
-		}
+		
 		
 		
 		/**
@@ -139,15 +132,8 @@ public class MarketState extends SimState{
 			return kassor;
 		}
 		
-		
-		/**
-		 * This method sets the amount of checkouts.
-		 * 
-		 * @param i An integer
-		 */
-		public void setKassor(int i) {
-			kassor = i;
-		}
+
+
 		
 		
 		/**
