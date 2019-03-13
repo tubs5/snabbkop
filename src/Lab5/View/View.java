@@ -48,13 +48,12 @@ public class View extends SimView {
 			id = event.getCustomer().getID();
 			//qtime = event.getCustomer().getTimeReturnQueue();
 			//stime = event.getCustomer().getTimeReturnStore();
-			double a = state.getTime().getTime();
-			double time = ((double)((int)(a*100)))/100;
-			double b = state.getTotalUnqueueTime();
-			double timeb = ((double)((int)(b*100)))/100;
+			double time = ((double)((int)(state.getTime().getTime()*100)))/100;
+			double timeb = ((double)((int)(state.getTotalUnqueueTime()*100)))/100;
+			double timec = ((double)((int)(state.getTotalQueueTime()*100)))/100;
 
 
-			System.out.println(time + " \t " + action +"\t "+id + " \t "+ open+ " \t " + (state.getKassor() - state.getActiveKassor())+ " \t " + timeb + " \t " + state.getCurrentCustomers() + " \t " + state.getCompletedCustomers()+" \t "+ state.getMissedCustomers()+" \t " + state.getQueueingCustomers() + " \t "+ state.getTotalQueueTime() + " \t " + state.getFIFO().getSize() +" \t "+ state.getFIFO().toString());
+			System.out.println(time + " \t " + action +"\t "+id + " \t "+ open+ " \t " + (state.getKassor() - state.getActiveKassor())+ " \t " + timeb + " \t " + state.getCurrentCustomers() + " \t " + state.getCompletedCustomers()+" \t "+ state.getMissedCustomers()+" \t " + state.getQueueingCustomers() + " \t "+ timec + " \t " + state.getFIFO().getSize() +" \t "+ state.getFIFO().toString());
 
 		} else if (arg1 instanceof PayEvent) {
 			PayEvent event = (PayEvent) arg1;
@@ -62,13 +61,12 @@ public class View extends SimView {
 			id = event.getCustomer().getID();
 			//qtime = event.getCustomer().getTimeReturnQueue();
 			//stime = event.getCustomer().getTimeReturnStore();
-			double a = state.getTime().getTime();
-			double time = ((double)((int)(a*100)))/100;
-			double b = state.getTotalUnqueueTime();
-			double timeb = ((double)((int)(b*100)))/100;
+			double time = ((double)((int)(state.getTime().getTime()*100)))/100;
+			double timeb = ((double)((int)(state.getTotalUnqueueTime()*100)))/100;
+			double timec = ((double)((int)(state.getTotalQueueTime()*100)))/100;
 			
 
-			System.out.println(time + " \t " + action +" \t "+id +" \t "+ open+ " \t " + (state.getKassor() - state.getActiveKassor())+ " \t " + timeb + " \t " + state.getCurrentCustomers() + " \t " + state.getCompletedCustomers()+" \t "+ state.getMissedCustomers()+" \t " + state.getQueueingCustomers() + " \t "+ state.getTotalQueueTime() + " \t " + state.getFIFO().getSize() +" \t "+ state.getFIFO().toString());
+			System.out.println(time + " \t " + action +" \t "+id +" \t "+ open+ " \t " + (state.getKassor() - state.getActiveKassor())+ " \t " + timeb + " \t " + state.getCurrentCustomers() + " \t " + state.getCompletedCustomers()+" \t "+ state.getMissedCustomers()+" \t " + state.getQueueingCustomers() + " \t "+ timec + " \t " + state.getFIFO().getSize() +" \t "+ state.getFIFO().toString());
 
 		} else if (arg1 instanceof PickupEvent) {
 			PickupEvent event = (PickupEvent) arg1;
