@@ -21,11 +21,15 @@ public class PayEvent extends Event{
     @Override
     public void ExecuteEvent() {
     	marketState.addCompletedCustomers();
-    	//marketState.removeCurrentCustomers();
+    	marketState.removeCurrentCustomers();
     	if (marketState.getActiveKassor() > 0) {
     		marketState.removeActiveKassa();
     	}
-    	 
+        PayEvent payEvent = new PayEvent(marketState.getTime().getNextCustomer(), queue,marketState,customer);
+        queue.addEvent(payEvent);
+        if (marketState. > 0) {
+        	
+        }
     }
 
     @Override
