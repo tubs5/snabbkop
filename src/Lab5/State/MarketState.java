@@ -248,7 +248,7 @@ public class MarketState extends SimState{
 		}
 		
 		
-		
+
 		
 		/**
 		 * This method adds a completed customer.

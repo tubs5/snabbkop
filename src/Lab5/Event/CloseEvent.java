@@ -18,6 +18,7 @@ public class CloseEvent extends Event{
     @Override
     public void ExecuteEvent() {
         marketState.closeStore();
+        marketState.notifyObservers(this);
     }
 
     @Override
