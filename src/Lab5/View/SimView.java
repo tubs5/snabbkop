@@ -2,6 +2,7 @@ package Lab5.View;
 
 import java.util.Observer;
 
+import Lab5.State.MarketState;
 import Lab5.State.SimState;
 
 /**
