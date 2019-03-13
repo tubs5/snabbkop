@@ -34,8 +34,9 @@ public class ArriveEvent extends Event {
 	 */
 	@Override
 	public void ExecuteEvent() {
-		marketState.observable(this);
+
 		marketState.getTime().setTime(startTime);
+		marketState.observable(this);
 		if (marketState.getStore()) {
 			Customer customer2 = new Customer();
 			ArriveEvent arriveEvent = new ArriveEvent(marketState.getTime().getNextCustomer(), queue, marketState,

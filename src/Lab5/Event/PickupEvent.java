@@ -19,12 +19,10 @@ public class PickupEvent extends Event{
 
     @Override
     public void ExecuteEvent() {
-        marketState.observable(this);
         marketState.getTime().setTime(startTime);
+        marketState.observable(this);
         if (marketState.getActiveKassor() < marketState.getKassor()){
             marketState.addActiveKassa();
-
-
             PayEvent payEvent = new PayEvent(marketState.getTime().getNextPayTime(),queue,marketState,customer);
             queue.addEvent(payEvent);
         }else{
