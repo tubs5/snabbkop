@@ -18,6 +18,11 @@ public class optimize {
 		
 	}
 	
+	/**
+	 * This method runs a simulation with fixed parameters and then returns the end state.
+	 * 
+	 * @return The end state
+	 */
 	MarketState one() {
 		int kassor  = 2;
 		int maxCustomers = 7;
@@ -47,7 +52,7 @@ public class optimize {
 	
 	
 	public int two(int maxCustomers, double arrivalSpeed, double P_min, double P_max, double B_min, double B_max, int seed) {
-		return 0;
+		return 0; //Temporary
 	}
 
 	void three() {
