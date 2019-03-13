@@ -12,13 +12,14 @@ import Lab5.State.SimState;
 /**
  * Prints start parameters, results and events
  * 
- * @author Klas Mannberg
+ * @author Victor Longberg, Tobias Heidlund, Simon Lundberg och Klas Mannberg.
  * @version 0.9
  * @since 2019-03-08
  * 
  */
 public class View extends SimView {
 
+	private SimState Sstate;
 	private MarketState state;
 
 	/**
@@ -29,16 +30,19 @@ public class View extends SimView {
 	 */
 	public View(SimState update) {
 		super(update);
+		this.state = (MarketState) update;
 	}
 /**
  * 
  */
 	public void update(Observable arg0, Object arg1) {
+		String open = "";
 		String action = null;
 		int id = 0;
 		//double qtime = 0;
 		//double stime = 0;
 
+		open = (state.getStore()) ? "Ö" : "S";
 		// beroende på typ av event behövs olika medelanden,
 		if (arg1 instanceof ArriveEvent) {
 			ArriveEvent event = (ArriveEvent) arg1;
@@ -64,10 +68,10 @@ public class View extends SimView {
 		} else if (arg1 instanceof CloseEvent) {
 			//CloseEvent event = (CloseEvent) arg1;
 			action = "Close";
-			System.out.println(action);
+			System.out.println("999,00" + action);
 		}
 		if (!(arg1 instanceof CloseEvent)) {
-			System.out.println(state.getTime() + " " + action + " " +id + state.getStore()+ "" + state.getActiveKassor()+ " " + state.getTotalUnqueueTime() + " " + state.getCurrentCustomers() + " " + state.getCompletedCustomers()+" "+ state.getMissedCustomers()+" " + state.getQueueingCustomers() + " "+ state.getTotalQueueTime() + " " + state.getFIFO().getSize() +" "+ state.getFIFO().toString());
+			System.out.println(state.getTime() + " " + action + " " +id + open+ "" + state.getActiveKassor()+ " " + state.getTotalUnqueueTime() + " " + state.getCurrentCustomers() + " " + state.getCompletedCustomers()+" "+ state.getMissedCustomers()+" " + state.getQueueingCustomers() + " "+ state.getTotalQueueTime() + " " + state.getFIFO().getSize() +" "+ state.getFIFO().toString());
 		}
 
 	}
@@ -87,7 +91,7 @@ public class View extends SimView {
 		System.out.println("HÄNDELSER");
 		System.out.println("==========");
 		System.out.println("Tid  Händelse  Kund  Öppet  LedKas  LedKasT  Kunder  CompKunder  MissKunder  KöKunder  TotKötid  KöLängd  Kö");
-		System.out.println(state.getTime() +" " + "Start");
+		System.out.println("0,00" +" " + "Start");
 	}
 /**
  * Endprint

@@ -23,7 +23,7 @@ public class ArriveEvent extends Event {
 	        queue.addEvent(arriveEvent);
 		if (marketState.getMaxCustomers() <= marketState.getCurrentCustomers()) {
 			marketState.addCurrentCustomers();
-	        PickupEvent pickupEvent = new PickupEvent(marketState.getTime().getNextCustomer(), queue,marketState,customer);
+	        PickupEvent pickupEvent = new PickupEvent(marketState.getTime().getNextPickupTime(), queue,marketState,customer);
 	        queue.addEvent(pickupEvent);
 		} else {
 			marketState.addMissedCustomers();
