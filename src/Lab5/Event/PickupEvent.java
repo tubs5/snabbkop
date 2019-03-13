@@ -20,7 +20,7 @@ public class PickupEvent extends Event{
     @Override
     public void ExecuteEvent() {
         marketState.getTime().setTime(startTime);
-        if (marketState.getActiveKassor() <= marketState.getKassor()){
+        if (marketState.getActiveKassor() < marketState.getKassor()){
             marketState.addActiveKassa();
 
 
