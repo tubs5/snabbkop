@@ -114,9 +114,9 @@ public class View extends SimView {
 		System.out.println("1) Av " + (state.getMissedCustomers()+state.getCompletedCustomers()) + " kunder behandlades " + state.getCompletedCustomers()
 				+ " medans " + state.getMissedCustomers() + " kunder missades");
 		System.out.println("2) Total ledig tid från " + state.getKassor() + " kassor blev " + state.getTimeWasted()
-				+ ". Genomsnittlig ledig tid blev " + state.getTimeWasted() / state.getKassor());
+				+ ". Genomsnittlig ledig tid per kassa blev " + state.getTimeWasted() / state.getKassor());
 		System.out.println("3) Total kötid för " + state.getMaxCustomers() + " kunder blev " + state.getTotalQueueTime()
-				+ ". Genomsnittlig ledig tid blev " + state.getTotalQueueTime() / state.getMaxCustomers());
+				+ ". Genomsnittlig kötid blev " + state.getTotalQueueTime() / (state.getMissedCustomers()+state.getCompletedCustomers()));
 
 	}
 
