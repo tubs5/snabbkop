@@ -17,11 +17,12 @@ public class ArriveEvent extends Event {
 
 	@Override
 	public void ExecuteEvent() {
-		if ( marketState.getStore() == true) {
+		if ( marketState.getStore()) {
 	        Customer customer2 = new Customer();
 	        ArriveEvent arriveEvent = new ArriveEvent(marketState.getTime().getNextCustomer(), queue,marketState,customer2);
 	        queue.addEvent(arriveEvent);
 		if (marketState.getMaxCustomers() <= marketState.getCurrentCustomers()) {
+			marketState.addCurrentCustomer();
 	        PickupEvent pickupEvent = new PickupEvent(marketState.getTime().getNextCustomer(), queue,marketState,customer);
 	        queue.addEvent(pickupEvent);
 		} else {
