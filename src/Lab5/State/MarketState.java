@@ -82,6 +82,22 @@ public class MarketState extends SimState{
 			currentCustomers = i;
 		}
 		
+		/**
+		 * This method adds a current customer
+		 * 
+		 */
+		public void removeCurrentCustomers() {
+			currentCustomers--;
+		}
+		
+		
+		/**
+		 * This method adds a current customer
+		 * 
+		 */
+		public void addCurrentCustomers() {
+			currentCustomers++;
+		}
 		
 		/**
 		 * This method returns the maximum amount of customers
