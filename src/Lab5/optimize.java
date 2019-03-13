@@ -15,15 +15,6 @@ import Lab5.View.View;
  */
 public class optimize {
 	public static void main(String[] args) {
-		
-	}
-	
-	/**
-	 * This method runs a simulation with fixed parameters and then returns the end state.
-	 * 
-	 * @return The end state
-	 */
-	MarketState one() {
 		int kassor  = 2;
 		int maxCustomers = 7;
 		double arrivalSpeed = 3;
@@ -32,7 +23,14 @@ public class optimize {
 		double B_min = 0.35;
 		double B_max = 0.6;
 		int seed = 13;
-
+	}
+	
+	/**
+	 * This method runs a simulation with fixed parameters and then returns the end state.
+	 * 
+	 * @return The end state
+	 */
+	MarketState one(int kassor, int maxCustomers, double arrivalSpeed, double P_min, double P_max, double B_min, double B_max, int seed) {
 	
 		EventQueue events = new EventQueue();
 		MarketState state = new MarketState(kassor,maxCustomers,arrivalSpeed,P_min,P_max,B_min,B_max,seed);
@@ -50,8 +48,20 @@ public class optimize {
 		
 	}
 	
-	
+	//Work in progress
 	public int two(int maxCustomers, double arrivalSpeed, double P_min, double P_max, double B_min, double B_max, int seed) {
+		int best = one(0, maxCustomers, arrivalSpeed, P_min, P_max, B_min, B_max, seed).getMissedCustomers();
+		int idealKass = 0;
+		for(int i = 1; i < 100; i++ ) {
+			int j = one(i, maxCustomers, arrivalSpeed, P_min, P_max, B_min, B_max, seed).getMissedCustomers();
+			if (j < best) {
+				best = j;
+				idealKass = i; 
+			}
+			
+		}
+		
+		
 		return 0; //Temporary
 	}
 
