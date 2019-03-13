@@ -35,7 +35,7 @@ public class View extends SimView {
  */
 	@Override
 	public void update(Observable o, Object arg1) {
-	String action = null;
+	String action = "Start";
 		int id = 0;
 		String open = (state.getStore()) ? "Ö" : "S";
 		//double qtime = 0;
@@ -47,6 +47,11 @@ public class View extends SimView {
 			id = event.getCustomer().getID();
 			//qtime = event.getCustomer().getTimeReturnQueue();
 			//stime = event.getCustomer().getTimeReturnStore();
+			double a = state.getTime().getTime();
+			double time = ((double)((int)(a*100)))/100;
+			
+
+			System.out.println(time + " \t " + action + " \t "+ open+ " \t " + state.getActiveKassor()+ " \t " + state.getTotalUnqueueTime() + " \t " + state.getCurrentCustomers() + " \t " + state.getCompletedCustomers()+" \t "+ state.getMissedCustomers()+" \t " + state.getQueueingCustomers() + " \t "+ state.getTotalQueueTime() + " \t " + state.getFIFO().getSize() +" \t "+ state.getFIFO().toString());
 
 		} else if (arg1 instanceof PayEvent) {
 			PayEvent event = (PayEvent) arg1;
@@ -54,6 +59,11 @@ public class View extends SimView {
 			id = event.getCustomer().getID();
 			//qtime = event.getCustomer().getTimeReturnQueue();
 			//stime = event.getCustomer().getTimeReturnStore();
+			double a = state.getTime().getTime();
+			double time = ((double)((int)(a*100)))/100;
+			
+
+			System.out.println(time + " \t " + action + " \t "+ open+ " \t " + state.getActiveKassor()+ " \t " + state.getTotalUnqueueTime() + " \t " + state.getCurrentCustomers() + " \t " + state.getCompletedCustomers()+" \t "+ state.getMissedCustomers()+" \t " + state.getQueueingCustomers() + " \t "+ state.getTotalQueueTime() + " \t " + state.getFIFO().getSize() +" \t "+ state.getFIFO().toString());
 
 		} else if (arg1 instanceof PickupEvent) {
 			PickupEvent event = (PickupEvent) arg1;
@@ -67,8 +77,12 @@ public class View extends SimView {
 			action = "Close";
 			System.out.println("999,00" + action);
 		}
-		if (!(arg1 instanceof CloseEvent)) {
-			System.out.println(state.getTime().getTime() + " \t " + action + " \t " +id +" \t "+ open+ " \t " + state.getActiveKassor()+ " \t " + state.getTotalUnqueueTime() + " \t " + state.getCurrentCustomers() + " \t " + state.getCompletedCustomers()+" \t "+ state.getMissedCustomers()+" \t " + state.getQueueingCustomers() + " \t "+ state.getTotalQueueTime() + " \t " + state.getFIFO().getSize() +" \t "+ state.getFIFO().toString());
+		if (!(arg1 instanceof CloseEvent) && !(arg1 instanceof ArriveEvent) && !(arg1 instanceof PickupEvent)) {
+			double a = state.getTime().getTime();
+			double time = ((double)((int)(a*100)))/100;
+			
+
+			System.out.println(time + " \t " + action + " \t " + " \t " +id +" \t "+ open+ " \t " + state.getActiveKassor()+ " \t " + state.getTotalUnqueueTime() + " \t " + state.getCurrentCustomers() + " \t " + state.getCompletedCustomers()+" \t "+ state.getMissedCustomers()+" \t " + state.getQueueingCustomers() + " \t "+ state.getTotalQueueTime() + " \t " + state.getFIFO().getSize() +" \t "+ state.getFIFO().toString());
 		}
 
 	}
@@ -88,7 +102,7 @@ public class View extends SimView {
 		System.out.println("HÄNDELSER");
 		System.out.println("==========");
 		System.out.println("Tid  Händelse  Kund  Öppet  LedKas  LedKasT  Kunder  CompKunder  MissKunder  KöKunder  TotKötid  KöLängd  Kö");
-		System.out.println("0,00" +" " + "Start");
+		//System.out.println("0,00" +" " + "Start");
 	}
 /**
  * Endprint
