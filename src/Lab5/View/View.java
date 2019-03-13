@@ -77,10 +77,17 @@ public class View extends SimView {
 
 		} else if (arg1 instanceof CloseEvent) {
 			//CloseEvent event = (CloseEvent) arg1;
-			double a = state.getTime().getTime();
-			double time = ((double)((int)(a*100)))/100;
+			//double a = state.getTime().getTime();
+			//double time = ((double)((int)(a*100)))/100;
 			action = "Close";
-			System.out.println(time +" \t " + action);
+			double time = ((double)((int)(state.getTime().getTime()*100)))/100;
+			double timeb = ((double)((int)(state.getTotalUnqueueTime()*100)))/100;
+			double timec = ((double)((int)(state.getTotalQueueTime()*100)))/100;
+			
+
+			System.out.println(time + " \t " + action +" \t \t "+"---" +" \t "+ open+ " \t " + (state.getKassor() - state.getActiveKassor())+ " \t " + timeb + " \t " + state.getCurrentCustomers() + " \t " + state.getCompletedCustomers()+" \t "+ state.getMissedCustomers()+" \t " + state.getQueueingCustomers() + " \t "+ timec + " \t " + state.getFIFO().getSize() +" \t "+ state.getFIFO().toString());
+
+			//System.out.println(time +" \t " + action);
 		}
 
 	}
