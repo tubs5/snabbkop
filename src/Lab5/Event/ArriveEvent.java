@@ -12,13 +12,13 @@ import Lab5.State.*;
  *
  */
 public class ArriveEvent extends Event {
-	
+
 	private Customer customer;
 	private MarketState marketState;
-	
+
 	/**
 	 * 
-	 * @param startTime, The time the event is called. 
+	 * @param startTime, The time the event is called.
 	 * @param queue, the queue of events.
 	 * @param marketState, the state of the market.
 	 * @param customer, the customer id.
@@ -27,8 +27,8 @@ public class ArriveEvent extends Event {
 		super(startTime, queue);
 		this.customer = customer;
 		this.marketState = marketState;
-			}
-	
+	}
+
 	/**
 	 * Executes the Events and is notifying the observer of all changes.
 	 */
@@ -50,17 +50,20 @@ public class ArriveEvent extends Event {
 		}
 		marketState.notifyObservers(this);
 	}
+
 	/**
 	 * Sends over information about the time.
+	 * 
 	 * @return startTime.
 	 */
 	@Override
 	public double getStartTime() {
 		return startTime;
 	}
-	
+
 	/**
 	 * Sends over information about the customer.
+	 * 
 	 * @return customer.
 	 */
 	public Customer getCustomer() {
