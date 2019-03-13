@@ -74,8 +74,10 @@ public class View extends SimView {
 
 		} else if (arg1 instanceof CloseEvent) {
 			//CloseEvent event = (CloseEvent) arg1;
+			double a = state.getTime().getTime();
+			double time = ((double)((int)(a*100)))/100;
 			action = "Close";
-			System.out.println("999.0" +" \t " + action);
+			System.out.println(time +" \t " + action);
 		}
 
 	}
