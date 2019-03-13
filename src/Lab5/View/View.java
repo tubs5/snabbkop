@@ -36,11 +36,13 @@ public class View extends SimView {
  * 
  */
 	public void update(Observable arg0, Object arg1) {
+		String open = "";
 		String action = null;
 		int id = 0;
 		//double qtime = 0;
 		//double stime = 0;
 
+		open = (state.getStore()) ? "Ö" : "S";
 		// beroende på typ av event behövs olika medelanden,
 		if (arg1 instanceof ArriveEvent) {
 			ArriveEvent event = (ArriveEvent) arg1;
@@ -69,7 +71,7 @@ public class View extends SimView {
 			System.out.println("999,00" + action);
 		}
 		if (!(arg1 instanceof CloseEvent)) {
-			System.out.println(state.getTime() + " " + action + " " +id + state.getStore()+ "" + state.getActiveKassor()+ " " + state.getTotalUnqueueTime() + " " + state.getCurrentCustomers() + " " + state.getCompletedCustomers()+" "+ state.getMissedCustomers()+" " + state.getQueueingCustomers() + " "+ state.getTotalQueueTime() + " " + state.getFIFO().getSize() +" "+ state.getFIFO().toString());
+			System.out.println(state.getTime() + " " + action + " " +id + open+ "" + state.getActiveKassor()+ " " + state.getTotalUnqueueTime() + " " + state.getCurrentCustomers() + " " + state.getCompletedCustomers()+" "+ state.getMissedCustomers()+" " + state.getQueueingCustomers() + " "+ state.getTotalQueueTime() + " " + state.getFIFO().getSize() +" "+ state.getFIFO().toString());
 		}
 
 	}
