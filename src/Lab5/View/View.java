@@ -121,17 +121,18 @@ public class View extends SimView {
  */
 	public void end() {
 		//double time = ((double)((int)(state.getTotalQueueTime() / (state.getMissedCustomers()+state.getCompletedCustomers())*100)))/100;
-		double timea = ((double)((int)(state.getTotalQueueTime()*100)))/100;
-		double timeb = ((double)((int)((state.getTotalUnqueueTime())*100)))/100;
+		double timequeue = ((double)((int)(state.getTotalQueueTime()*100)))/100;
+		double timenoqueue = ((double)((int)((state.getTotalUnqueueTime())*100)))/100;
+		double timequeueavg =((double)((int)((timequeue/state.getQueueingCustomers())*100)))/100;
 		System.out.println("");
 		System.out.println("RESULTAT");
 		System.out.println("==========");
 		System.out.println("1) Av " + (state.getMissedCustomers()+state.getCompletedCustomers()) + " kunder behandlades " + state.getCompletedCustomers()
 				+ " medans " + state.getMissedCustomers() + " kunder missades");
-		System.out.println("2) Total ledig tid från " + state.getKassor() + " kassor blev " + timeb
-				+ ". Genomsnittlig ledig tid per kassa blev " + timeb/state.getKassor());
-		System.out.println("3) Total kötid för " + state.getQueueingCustomers() + " kunder blev " + timea
-				+ ". Genomsnittlig kötid blev " + timea/state.getQueueingCustomers()) ;
+		System.out.println("2) Total ledig tid från " + state.getKassor() + " kassor blev " + timenoqueue
+				+ ". Genomsnittlig ledig tid per kassa blev " + timenoqueue/state.getKassor());
+		System.out.println("3) Total kötid för " + state.getQueueingCustomers() + " kunder blev " + timequeue
+				+ ". Genomsnittlig kötid blev " + timequeueavg) ;
 
 	}
 
