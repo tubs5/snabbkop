@@ -30,6 +30,7 @@ public class PayEvent extends Event {
 		marketState.removeActiveKassa();
 		if(customer.getStartQueTime() != 0) {
 			marketState.addTotalQueueTime(marketState.getTime().getTime() - customer.getStartQueTime());
+			customer.setStartQueTime(0);
 		}
 
 		if (marketState.getFIFO().getSize() > 0) {
