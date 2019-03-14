@@ -33,11 +33,9 @@ public class Simulator {
 	 * from view
 	 */
 	public void start() {
-		view.start();
 		while (!emergencystop && events.hasNext()) {
 			events.getNextEvent().ExecuteEvent();
 		}
-		view.end();
 	}
 
 }
