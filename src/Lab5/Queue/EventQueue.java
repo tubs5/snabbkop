@@ -3,7 +3,7 @@ package Lab5.Queue;
 import Lab5.Event.*;
 
 /**
- * Created by Tobias Heidlund on 2019-03-08.
+ * @author Victor Longberg, Tobias Heidlund Simon Lundberg och Klas Mannberg
  */
 public class EventQueue {
     private SortedSequence sequence = new SortedSequence();
@@ -25,7 +25,11 @@ public class EventQueue {
     public void addEvent(Event event){
         sequence.addEvent(event);
     }
-
+    /**
+     * This method checks if the sequence has a next element
+     * 
+     * @return True or False
+     */
     public boolean hasNext(){
         return sequence.hasNext();
     }
