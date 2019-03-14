@@ -7,8 +7,8 @@ import Lab5.Event.Event;
 /**
  * Updates and returns running status of current state
  * 
- * @author Klas Mannberg, Simon Lundberg
- * @version 1.1
+ * @author Victor Longberg, Tobias Heidlund, Simon Lundberg och Klas Mannberg
+ * @version 1.0
  * @since 2019-03-13
  */
 
@@ -22,7 +22,7 @@ public class SimState extends Observable {
 	public boolean isRunning() {
 		return running;
 	}
-	
+
 	/**
 	 * This method runs the state
 	 * 
@@ -30,8 +30,7 @@ public class SimState extends Observable {
 	public void run() {
 		running = true;
 	}
-	
-	
+
 	/**
 	 * 
 	 * This method stops the state
@@ -39,7 +38,7 @@ public class SimState extends Observable {
 	public void stop() {
 		running = false;
 	}
-	
+
 	/**
 	 * This method updates the state
 	 *

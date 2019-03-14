@@ -8,7 +8,7 @@ import Lab5.State.*;
  * he can fit inside the store. It also checks for the potential customers lost
  * due to a full store.
  * 
- * @author Victor Longberg, Tobias Heidlund Simon Lundberg och Klas Mannberg.
+ * @author Victor Longberg, Tobias Heidlund, Simon Lundberg och Klas Mannberg.
  *
  */
 public class ArriveEvent extends Event {
@@ -43,8 +43,6 @@ public class ArriveEvent extends Event {
 					customer2);
 			queue.addEvent(arriveEvent);
 
-
-
 			if (marketState.getMaxCustomers() > marketState.getCurrentCustomers()) {
 				marketState.addCurrentCustomers();
 				PickupEvent pickupEvent = new PickupEvent(marketState.getTime().getNextPickupTime(), queue, marketState,
@@ -54,7 +52,6 @@ public class ArriveEvent extends Event {
 				marketState.addMissedCustomers();
 			}
 		}
-
 
 	}
 

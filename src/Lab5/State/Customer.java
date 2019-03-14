@@ -2,7 +2,7 @@ package Lab5.State;
 
 /**
  * 
- * @author Simon Lundberg
+ * @author Victor Longberg, Tobias Heidlund, Simon Lundberg och Klas Mannberg
  *
  */
 public class Customer {
