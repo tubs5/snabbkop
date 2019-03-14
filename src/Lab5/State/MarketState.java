@@ -198,12 +198,14 @@ public class MarketState extends SimState{
 		 *
 		 */
 		public void addTotalUnqueueTime() {
-			if(isOpen) {
-				double timechecked = time.getTime() - lastCheckedUnqueTime;
-				lastCheckedUnqueTime = time.getTime();
-				totalUnqueueTime += timechecked * (kassor - activeKassor);
-				totalQueueTime += timechecked * (getFIFO().getSize());
+			if(!isOpen && (activeKassor == 0)){
+				return;
 			}
+			double timechecked = time.getTime() - lastCheckedUnqueTime;
+			lastCheckedUnqueTime = time.getTime();
+			totalUnqueueTime += timechecked * (kassor - activeKassor);
+			totalQueueTime += timechecked * (getFIFO().getSize());
+
 		}
 
 

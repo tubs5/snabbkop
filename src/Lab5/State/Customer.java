@@ -11,7 +11,7 @@ public class Customer {
 
 	private static int customerids = 0;
 
-	
+
 
 	private double startQueTime = 0;
 

@@ -25,7 +25,16 @@ public class MainSim {
 		int seed = 1234;
 		int closeTime = 10;
 
-	
+		/*int kassor  = 2;
+		int maxCustomers = 7;
+		double arrivalSpeed = 3;
+		double P_min = 0.6;
+		double P_max = 0.9;
+		double B_min = 0.35;
+		double B_max = 0.6;
+		int seed = 13;
+		int closeTime = 8;*/
+
 		EventQueue events = new EventQueue();
 		MarketState state = new MarketState(kassor,maxCustomers,arrivalSpeed,P_min,P_max,B_min,B_max,seed);
 		View view = new View(state);
