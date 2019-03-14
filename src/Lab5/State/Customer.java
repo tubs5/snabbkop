@@ -1,8 +1,9 @@
 package Lab5.State;
 
 /**
+ * This class represents a customer
  * 
- * @author Simon Lundberg
+ * @author Victor Longberg, Tobias Heidlund, Simon Lundberg och Klas Mannberg
  *
  */
 public class Customer {
@@ -10,7 +11,9 @@ public class Customer {
 	private int customerID;
 	private static int customerids = 0;
 
-
+	/**
+	 * Customer constructor, assigns an ID
+	 */
 	public Customer(){
 		customerID = customerids++;
 	}
@@ -23,7 +26,9 @@ public class Customer {
 	public int getID() {
 		return customerID;
 	}
-
+	/**
+	 * This method returns the customer ID as a string
+	 */
 	@Override
 	public String toString() {
 		return ""+customerID;
