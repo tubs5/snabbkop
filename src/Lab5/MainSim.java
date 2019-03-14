@@ -48,10 +48,7 @@ public class MainSim {
 		CloseEvent closeEvent = new CloseEvent(closeTime,events,state);
 		events.addEvent(closeEvent);
 		
-		EndEvent endEvent = new EndEvent(999, events);
-		events.addEvent(endEvent);
-
-		EndEvent endEvent = new EndEvent(999,events);
+		EndEvent endEvent = new EndEvent(999, events, state);
 		events.addEvent(endEvent);
 
 		state.generateView();
