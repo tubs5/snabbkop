@@ -11,13 +11,13 @@ import java.util.Random;
 
 public class Optimize2 {
     Random rand = new Random();
-	int maxCustomers = 10;
-	double arrivalSpeed = 2;
+	int maxCustomers = 30;
+	double arrivalSpeed = 10;
 	double P_min = 0.5;
 	double P_max = 1;
 	double B_min = 2;
 	double B_max = 3;
-	int closeTime = 100;
+	int closeTime = 10;
 
 
     public static void main(String[] args) {
@@ -26,8 +26,8 @@ public class Optimize2 {
 
     }
     public Optimize2(){
-        seedOptimize();
-    	//kassaOptimize(12390);
+        //seedOptimize();
+    	kassaOptimize(1234);
     }
 
 
@@ -51,11 +51,13 @@ public class Optimize2 {
     	//int missedc = simSetup(bestkassor, seed).getMissedCustomers();
     	
         for (int i = 0; i < 100; i++) {
-        	//System.out.println("Kör kassor," + simSetup(bestkassor-i).getKassor() + "  " +simSetup(bestkassor).getKassor() + " Missed c is" + missedc);
-        	if (simSetup(bestkassor+i, seed).getMissedCustomers()<simSetup(bestkassor, seed).getMissedCustomers()) {
+        	//System.out.println("Kör kassor," + simSetup(bestkassor, seed).getKassor() + "  " +simSetup(bestkassor, seed).getKassor());
+        	if (simSetup(bestkassor/2, seed).getMissedCustomers()<simSetup(bestkassor, seed).getMissedCustomers()) {
         		//missedc = simSetup(bestkassor+i, seed).getMissedCustomers();
-        		bestkassor++;
+        		bestkassor = Math.round(bestkassor/2);
         		
+        	} else if (simSetup(bestkassor*2, seed).getMissedCustomers()<simSetup(bestkassor, seed).getMissedCustomers()) {
+        		bestkassor = bestkassor*2;
         	}
         }
         System.out.println("Best kassor för seed " + seed + " is " + bestkassor);
