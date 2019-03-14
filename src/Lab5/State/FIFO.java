@@ -4,8 +4,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Queue;
 /**
+ * This class is a "First in, First out" queue that simulates the queue to the checkouts.
  * 
- * @author Simon Lundberg and Tobias Heidlund
+ * @author Victor Longberg, Tobias Heidlund, Simon Lundberg och Klas Mannberg
  *
  */
 public class FIFO{
