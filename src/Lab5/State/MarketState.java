@@ -4,7 +4,7 @@ import Lab5.View.View;
 
 /**
  * 
- * @author Simon Lundberg
+ * @author Victor Longberg, Tobias Heidlund Simon Lundberg och Klas Mannberg
  *
  */
 public class MarketState extends SimState{
