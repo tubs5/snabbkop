@@ -165,7 +165,7 @@ public class optimize {
 	public static void main(String[] args) {
 		optimize opt = new optimize();
 		System.out.println("Max som ryms, M..........: " + MAXCUSTOMERS);
-		System.out.println("Ankomshastighet, lambda..: " + ARRIVALSPEED);
+		System.out.println("Ankomshastighet, ArrivalSpeed..: " + ARRIVALSPEED);
 		System.out.println("Plocktider, [P_min..Pmax]: [" + P_MIN + ".." + P_MAX +"]");
 		System.out.println("Betaltider, [K_min..Kmax]: [" + B_MIN + ".." + B_MAX + "]");
 		System.out.println("Frö, f...................: " + SEED);
