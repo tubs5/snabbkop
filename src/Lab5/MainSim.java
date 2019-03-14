@@ -1,6 +1,7 @@
 package Lab5;
 
 import Lab5.Event.CloseEvent;
+import Lab5.Event.EndEvent;
 import Lab5.Event.StartEvent;
 import Lab5.Queue.EventQueue;
 import Lab5.Event.EndEvent;
@@ -50,7 +51,12 @@ public class MainSim {
 		EndEvent endEvent = new EndEvent(999, events);
 		events.addEvent(endEvent);
 
+		EndEvent endEvent = new EndEvent(999,events);
+		events.addEvent(endEvent);
+
+		state.generateView();
 		Simulator Market = new Simulator(view, events, state);
 		Market.start();
+
 	}
 }
