@@ -69,3 +69,108 @@ public class optimize {
 		
 	}
 }
+ 
+/**
+package main;
+import java.util.Random;
+
+import generalDEDS.DEDS;
+import generalDEDS.EventQueue;
+import snabbkop.SnabbState;
+import snabbkop.SnabbEvents.StartEvent;
+
+ 
+public class Optimize {
+	final private static int OPTIMALLOST = 5273; 
+	final private static int MAXCUSTOMERS = 1400;
+	final private static double LAMBDA = 2000.0;
+	final private static double PICKTIME1 = 0.45;
+	final private static double PICKTIME2 = 0.65;
+	final private static double PAYTIME1 = 0.2;
+	final private static double PAYTIME2 = 0.3;
+	final private static double CLOSINGTIME = 20.00;
+	final private static long SEED = 42;
+	
+	
+	private static int runOptimal(int cashiers, long seed) {
+		EventQueue eventQueue = new EventQueue();
+		SnabbState state = new snabbkop.SnabbState(cashiers, Optimize.LAMBDA,
+				Optimize.PICKTIME1, Optimize.PICKTIME2, Optimize.PAYTIME1,
+				Optimize.PAYTIME2, Optimize.MAXCUSTOMERS, Optimize.CLOSINGTIME, seed);
+		StartEvent startingEvent = new StartEvent(eventQueue);
+		DEDS simulator = new DEDS(eventQueue, state);
+		eventQueue.enqueue(startingEvent);
+		simulator.run();
+		
+		return state.getNMissed();
+
+	}
+	
+	private int runSim(int cashiers, long seed) {
+		return runOptimal(cashiers, seed);
+		
+	}
+	
+	private int optimizeSeed(long seed) {
+		int lost;
+		for (int n = MAXCUSTOMERS; n > 0; n--) {
+			lost = runSim(n, seed);
+			if (lost > OPTIMALLOST) {
+				return n + 1;
+			}
+		}
+		return 1;
+	}
+	
+	private int binOptimizeSeed(long seed) {
+		int lost;
+		int lastcashiers = 0;
+		int cashiers = MAXCUSTOMERS / 2;
+		while (cashiers != lastcashiers) {
+			lost = runSim(cashiers, seed);
+			lastcashiers = cashiers;
+			if (lost > 0) {
+				cashiers += cashiers / 2;
+			} else {
+				cashiers -= cashiers / 2;
+			}
+			cashiers = cashiers == 0 ? 1 : cashiers;
+		}
+		return cashiers;
+	}
+	
+	private int optimizer() {
+		int count = 0;
+		int highest, last;
+		int lastHighest;
+		Random rng = new Random();
+		
+		highest = optimizeSeed(rng.nextLong());
+		while (count < 100) {
+			last = optimizeSeed(rng.nextLong());
+			lastHighest = highest;	
+			highest = last > highest ? last : highest;
+			if (highest == lastHighest) {
+				count++;
+			} else {
+				count = 0;
+			}
+		}
+		return highest;
+	}
+	
+
+	public static void main(String[] args) {
+		Optimize opt = new Optimize();
+		System.out.println("Max som ryms, M..........: " + MAXCUSTOMERS);
+		System.out.println("Ankomshastighet, lambda..: " + LAMBDA);
+		System.out.println("Plocktider, [P_min..Pmax]: [" + PICKTIME1 + ".." + PICKTIME2 +"]");
+		System.out.println("Betaltider, [K_min..Kmax]: [" + PAYTIME1 + ".." + PAYTIME2 + "]");
+		System.out.println("Fr�, f...................: " + SEED);
+		System.out.println("St�ngning sker " + CLOSINGTIME + " och stoph�ndelsen sker tiden 999.0.");
+		System.out.println("Minst antal kassor som ger minimalt antal missade (" + OPTIMALLOST + "): " + opt.optimizeSeed(SEED));
+	}
+	
+	
+}
+*/
