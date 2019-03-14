@@ -12,7 +12,7 @@ public class EndEvent extends Event {
 
     @Override
     public void ExecuteEvent() {
-        state.observable(this);
+        
     }
 
     @Override
