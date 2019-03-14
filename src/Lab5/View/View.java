@@ -37,6 +37,7 @@ public class View extends SimView {
 	@Override
 	public void update(Observable o, Object arg1) {
 		String action = "Start";
+		state.addTotalUnqueueTime();
 		int id = 0;
 		String open = (state.getStore()) ? "Ö" : "S";
 		double time = ((double) ((int) (state.getTime().getTime() * 100))) / 100;
