@@ -1,4 +1,7 @@
 package Lab5.State;
+
+import Lab5.View.View;
+
 /**
  * 
  * @author Simon Lundberg
@@ -43,6 +46,13 @@ public class MarketState extends SimState{
 			f = new FIFO();
 			time = new Time(this);
 		}
+
+
+		public void generateView(){
+			View view = new View(this);
+			view.start();
+		}
+
 
 		/**
 		 * This method returns the time
