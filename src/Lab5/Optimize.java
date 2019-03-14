@@ -18,14 +18,14 @@ public class Optimize {
 
 
     Random rand = new Random();
-    private int maxCustomers = 1400;
-    private double arrivalSpeed = 100;
-    private double P_min = 0.45;
-    private double P_max = 0.65;
-    private double B_min = 0.2;
-    private double B_max = 0.3;
-    private int seed = 42;
-    private int closeTime = 20;
+    private int maxCustomers = 5;
+    private double arrivalSpeed = 1;
+    private double P_min = 0.5;
+    private double P_max = 1;
+    private double B_min = 2;
+    private double B_max = 3;
+    private int seed = 1234;
+    private int closeTime = 10;
     private int missade;
 
 

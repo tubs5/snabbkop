@@ -16,7 +16,7 @@ import Lab5.View.View;
  */
 public class MainSim {
 	public static void main(String[] args) {
-		int kassor  = 2;
+		/*int kassor  = 2;
 		int maxCustomers = 5;
 		double arrivalSpeed = 1;
 		double P_min = 0.5;
@@ -25,8 +25,8 @@ public class MainSim {
 		double B_max = 3;
 		int seed = 1234;
 		int closeTime = 10;
-
-		/*int kassor  = 2;
+*/
+	int kassor  = 2;
 		int maxCustomers = 7;
 		double arrivalSpeed = 3;
 		double P_min = 0.6;
@@ -34,7 +34,7 @@ public class MainSim {
 		double B_min = 0.35;
 		double B_max = 0.6;
 		int seed = 13;
-		int closeTime = 8;*/
+		int closeTime = 8;
 
 		EventQueue events = new EventQueue();
 		MarketState state = new MarketState(kassor,maxCustomers,arrivalSpeed,P_min,P_max,B_min,B_max,seed);
