@@ -9,7 +9,7 @@ import Lab5.State.*;
  * Prints start parameters, results and events.
  * 
  * @author Victor Longberg, Tobias Heidlund, Simon Lundberg och Klas Mannberg.
- * @version 0.9
+ * @version 1.0
  * @since 2019-03-08
  * 
  */
