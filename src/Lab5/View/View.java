@@ -48,24 +48,40 @@ public class View extends SimView {
 			ArriveEvent event = (ArriveEvent) arg1;
 			id = event.getCustomer().getID();
 			action = "Ankomst";
+			System.out.println(time + " \t " + action + "\t " + id + " \t " + open + " \t "
+					+ (state.getKassor() - state.getActiveKassor()) + " \t " + timenoqueue + " \t "
+					+ state.getCurrentCustomers() + " \t " + state.getCompletedCustomers() + " \t "
+					+ state.getMissedCustomers() + " \t " + state.getQueueingCustomers() + " \t " + timequeue + " \t "
+					+ state.getFIFO().getSize() + " \t " + state.getFIFO().toString());
+
 		} else if (arg1 instanceof PayEvent) {
 			PayEvent event = (PayEvent) arg1;
 			id = event.getCustomer().getID();
 			action = "Betalning";
+			System.out.println(time + " \t " + action + " \t " + id + " \t " + open + " \t "
+					+ (state.getKassor() - state.getActiveKassor()) + " \t " + timenoqueue + " \t "
+					+ state.getCurrentCustomers() + " \t " + state.getCompletedCustomers() + " \t "
+					+ state.getMissedCustomers() + " \t " + state.getQueueingCustomers() + " \t " + timequeue + " \t "
+					+ state.getFIFO().getSize() + " \t " + state.getFIFO().toString());
 
 		} else if (arg1 instanceof PickupEvent) {
 			PickupEvent event = (PickupEvent) arg1;
 			id = event.getCustomer().getID();
 			action = "Plock";
+			System.out.println(time + " \t " + action + " \t  \t " + id + " \t " + open + " \t "
+					+ (state.getKassor() - state.getActiveKassor()) + " \t " + timenoqueue + " \t "
+					+ state.getCurrentCustomers() + " \t " + state.getCompletedCustomers() + " \t "
+					+ state.getMissedCustomers() + " \t " + state.getQueueingCustomers() + " \t " + timequeue + " \t "
+					+ state.getFIFO().getSize() + " \t " + state.getFIFO().toString());
 		} else if (arg1 instanceof CloseEvent) {
 			// CloseEvent event = (CloseEvent) arg1;
 			action = "Close";
+			System.out.println(time + " \t " + action + " \t \t " + "---" + " \t " + open + " \t "
+					+ (state.getKassor() - state.getActiveKassor()) + " \t " + timenoqueue + " \t "
+					+ state.getCurrentCustomers() + " \t " + state.getCompletedCustomers() + " \t "
+					+ state.getMissedCustomers() + " \t " + state.getQueueingCustomers() + " \t " + timequeue + " \t "
+					+ state.getFIFO().getSize() + " \t " + state.getFIFO().toString());
 		}
-		System.out.println(time + " \t " + action + " \t " + id + " \t " + open + " \t "
-				+ (state.getKassor() - state.getActiveKassor()) + " \t " + timenoqueue + " \t "
-				+ state.getCurrentCustomers() + " \t " + state.getCompletedCustomers() + " \t "
-				+ state.getMissedCustomers() + " \t " + state.getQueueingCustomers() + " \t " + timequeue + " \t "
-				+ state.getFIFO().getSize() + " \t " + state.getFIFO().toString());
 
 	}
 
