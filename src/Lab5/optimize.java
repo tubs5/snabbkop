@@ -109,7 +109,16 @@ public class optimize {
 	}
 	
 	private int runSim(int cashiers, int seed) {
-		return runOptimal(cashiers, seed);
+		//return runOptimal(cashiers, seed);
+		int a =0;
+		int best = runOptimal(a, seed);
+		int next = runOptimal(a+1, seed);
+		for(int i = 0; i<100;i++) {
+			if (best > next) {
+				best = next;
+			}
+		}
+		return best;
 		
 	}
 	
