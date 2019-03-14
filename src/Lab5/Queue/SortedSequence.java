@@ -5,7 +5,7 @@ import Lab5.Event.*;
 import java.util.ArrayList;
 
 /**
- * Sorts events
+ * Sorts events (>_<)
  * 
  * @author Victor Longberg, Tobias Heidlund, Simon Lundberg och Klas Mannberg
  */
