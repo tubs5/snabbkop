@@ -8,7 +8,7 @@ import Lab5.Event.PayEvent;
 import Lab5.Event.PickupEvent;
 import Lab5.State.MarketState;
 import Lab5.State.SimState;
-
+import Lab5.Event.EndEvent;
 /**
  * Prints start parameters, results and events
  * 
@@ -40,8 +40,8 @@ public class View extends SimView {
 		state.addTotalUnqueueTime();
 		int id = 0;
 		String open = (state.getStore()) ? "Ö" : "S";
-		double time = ((double) ((int) (state.getTime().getTime() * 100))) / 100;
-		double timenoqueue = ((double) ((int) (state.getTotalUnqueueTime() * 100))) / 100;
+		double time = Math.round(state.getTime().getTime());
+		double timenoqueue = Math.round(state.getTotalUnqueueTime());
 		double timequeue = ((double) ((int) (state.getTotalQueueTime() * 100))) / 100;
 
 		// beroende på typ av event behövs olika medelanden,
@@ -82,6 +82,10 @@ public class View extends SimView {
 					+ state.getCurrentCustomers() + " \t " + state.getCompletedCustomers() + " \t "
 					+ state.getMissedCustomers() + " \t " + state.getQueueingCustomers() + " \t " + timequeue + " \t "
 					+ state.getFIFO().getSize() + " \t " + state.getFIFO().toString());
+		} else if (arg1 instanceof EndEvent) {
+			action = "Stop";
+			System.out.println(time + action);
+			
 		}
 
 	}
