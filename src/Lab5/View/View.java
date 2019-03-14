@@ -8,7 +8,7 @@ import Lab5.Event.PayEvent;
 import Lab5.Event.PickupEvent;
 import Lab5.State.MarketState;
 import Lab5.State.SimState;
-
+import Lab5.Event.EndEvent;
 /**
  * Prints start parameters, results and events
  * 
@@ -82,6 +82,10 @@ public class View extends SimView {
 					+ state.getCurrentCustomers() + " \t " + state.getCompletedCustomers() + " \t "
 					+ state.getMissedCustomers() + " \t " + state.getQueueingCustomers() + " \t " + timequeue + " \t "
 					+ state.getFIFO().getSize() + " \t " + state.getFIFO().toString());
+		} else if (arg1 instanceof EndEvent) {
+			action = "Stop";
+			System.out.println(time + action);
+			
 		}
 
 	}
