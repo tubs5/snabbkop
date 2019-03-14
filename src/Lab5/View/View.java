@@ -88,7 +88,7 @@ public class View extends SimView {
 					+ state.getFIFO().getSize() + " \t " + state.getFIFO().toString());
 		} else if (arg1 instanceof EndEvent) {
 			action = "Stop";
-			System.out.println(time + " \t " +action);
+			System.out.println(((EndEvent) arg1).getStartTime() + " \t " +action);
 			end();
 			
 		}
