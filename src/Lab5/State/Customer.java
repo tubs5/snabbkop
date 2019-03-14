@@ -8,12 +8,8 @@ package Lab5.State;
 public class Customer {
 	
 	private int customerID;
-
 	private static int customerids = 0;
 
-
-
-	private double startQueTime = 0;
 
 	public Customer(){
 		customerID = customerids++;

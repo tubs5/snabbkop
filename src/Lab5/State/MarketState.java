@@ -20,7 +20,6 @@ public class MarketState extends SimState{
 		private int missedCustomers = 0;
 		private int queueingCustomers = 0;
 		private Time time;
-		private double timeWasted = 0;
 		private double totalQueueTime = 0;
 		private double totalUnqueueTime = 0;
 		private double arrivalSpeed;
@@ -83,16 +82,7 @@ public class MarketState extends SimState{
 			return currentCustomers;
 		}
 		
-		
-		/**
-		 * This method sets the current amount of customers.
-		 * 
-		 * @param i An integer
-		 */
-		public void setCurrentCustomers(int i) {
-			currentCustomers = i;
-		}
-		
+
 		/**
 		 * This method adds a current customer
 		 * 
@@ -181,16 +171,7 @@ public class MarketState extends SimState{
 		public double getTotalQueueTime() {
 			return totalQueueTime;
 		}
-		
-		
-		/**
-		 * This method add the total amount of time spent in queues.
-		 * 
-		 * @param d A double
-		 */
-		public void addTotalQueueTime(double d) {
-			totalQueueTime += d;
-		}
+
 		
 		
 		/**
@@ -216,27 +197,6 @@ public class MarketState extends SimState{
 			totalUnqueueTime += timechecked * (kassor - activeKassor);
 			totalQueueTime += timechecked * (getFIFO().getSize());
 
-		}
-
-
-
-		/**
-		 * This method returns the total amount of time wasted.
-		 * 
-		 * @return amount of time wasted.
-		 */
-		public double getTimeWasted() {
-			return timeWasted;
-		}
-		
-		
-		/**
-		 * This method sets the total amount of time wasted.
-		 * 
-		 * @param d A double
-		 */
-		public void setTimeWasted(double d) {
-			timeWasted = d;
 		}
 		
 		/**
@@ -278,13 +238,7 @@ public class MarketState extends SimState{
 		}
 		
 		
-		/**
-		 * This method removes a completed customer.
-		 * 
-		 */
-		public void removeCompletedCustomers() {
-			completedCustomers--;
-		}
+
 		
 		
 		/**
@@ -297,14 +251,7 @@ public class MarketState extends SimState{
 		}
 		
 		
-		/**
-		 * This method sets the amount of queueing customers
-		 * 
-		 * @param i An integer
-		 */
-		public void setQueueingCustomers(int i) {
-			queueingCustomers = i;
-		}
+
 		
 		
 		/**
@@ -316,14 +263,7 @@ public class MarketState extends SimState{
 		}
 		
 		
-		/**
-		 * This method removes a queueing customer
-		 * 
-		 */
-		public void removeQueueingCustomers() {
-			queueingCustomers--;
-		}
-		
+
 		/**
 		 * This method opens the store
 		 * 
@@ -349,6 +289,7 @@ public class MarketState extends SimState{
 		 */
 		public boolean getStore() {
 			return isOpen;
+
 		}
 		
 		/**
@@ -383,7 +324,7 @@ public class MarketState extends SimState{
 		 * 
 		 * @return Minimum paying time.
 		 */
-		public double getB_min() {
+		double getB_min() {
 			return b_min;
 		}
 		
@@ -392,7 +333,7 @@ public class MarketState extends SimState{
 		 * 
 		 * @return Maximum paying time.
 		 */
-		public double getB_max() {
+		double getB_max() {
 			return b_max;
 		}
 		

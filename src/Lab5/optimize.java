@@ -117,6 +117,7 @@ public class optimize {
 			if (best > next) {
 				best = next;
 			}
+			a++;
 		}
 		return best;
 		

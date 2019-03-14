@@ -4,7 +4,6 @@ import Lab5.Event.CloseEvent;
 import Lab5.Event.EndEvent;
 import Lab5.Event.StartEvent;
 import Lab5.Queue.EventQueue;
-import Lab5.Event.EndEvent;
 import Lab5.State.MarketState;
 import Lab5.View.View;
 
@@ -47,8 +46,8 @@ public class MainSim {
 
 		CloseEvent closeEvent = new CloseEvent(closeTime,events,state);
 		events.addEvent(closeEvent);
-		
-		EndEvent endEvent = new EndEvent(999, events, state);
+
+		EndEvent endEvent = new EndEvent(999,events,state);
 		events.addEvent(endEvent);
 
 		state.generateView();

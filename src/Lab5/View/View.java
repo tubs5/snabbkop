@@ -9,6 +9,7 @@ import Lab5.Event.PickupEvent;
 import Lab5.State.MarketState;
 import Lab5.State.SimState;
 import Lab5.Event.EndEvent;
+import java.math.*;
 /**
  * Prints start parameters, results and events
  * 
@@ -38,11 +39,14 @@ public class View extends SimView {
 	public void update(Observable o, Object arg1) {
 		String action = "Start";
 		state.addTotalUnqueueTime();
+		//BigDecimal b = new BigDecimal
 		int id = 0;
 		String open = (state.getStore()) ? "Ö" : "S";
-		double time = Math.round(state.getTime().getTime());
-		double timenoqueue = Math.round(state.getTotalUnqueueTime());
-		double timequeue = Math.round(state.getTotalQueueTime());
+		
+		double time =  ((double) ((int) Math.round(state.getTime().getTime() * 100))) / 100;
+		double timenoqueue =((double) ((int) Math.round(state.getTotalUnqueueTime() * 100))) / 100;
+		double timequeue = ((double) ((int) Math.round(state.getTotalQueueTime() * 100))) / 100;
+//		math.b
 
 		// beroende på typ av event behövs olika medelanden,
 		if (arg1 instanceof ArriveEvent) {
@@ -84,7 +88,8 @@ public class View extends SimView {
 					+ state.getFIFO().getSize() + " \t " + state.getFIFO().toString());
 		} else if (arg1 instanceof EndEvent) {
 			action = "Stop";
-			System.out.println(time + action);
+			System.out.println(((EndEvent) arg1).getStartTime() + " \t " +action);
+			end();
 			
 		}
 
@@ -114,10 +119,13 @@ public class View extends SimView {
 	 * Endprint
 	 */
 	public void end() {
-		double timequeue = ((double) ((int) (state.getTotalQueueTime() * 100))) / 100;
-		double timenoqueue = ((double) ((int) ((state.getTotalUnqueueTime()) * 100))) / 100;
-		double timequeueavg = ((double) ((int) ((timequeue / state.getQueueingCustomers()) * 100))) / 100;
-		double timenoqueueavg = ((double) ((int) ((timenoqueue / state.getKassor()) * 100))) / 100;
+		//double time =  ((double) ((int) Math.round(state.getTime().getTime() * 100))) / 100;
+		//double timenoqueue =((double) ((int) Math.round(state.getTotalUnqueueTime() * 100))) / 100;
+		//double timequeue = ((double) ((int) Math.round(state.getTotalQueueTime() * 100))) / 100;
+		double timequeue = ((double) ((int) Math.round(state.getTotalQueueTime() * 100))) / 100;
+		double timenoqueue = ((double) ((int) Math.round((state.getTotalUnqueueTime()) * 100))) / 100;
+		double timequeueavg = ((double) ((int) Math.round((timequeue / state.getQueueingCustomers()) * 100))) / 100;
+		double timenoqueueavg = ((double) ((int) Math.round((timenoqueue / state.getKassor()) * 100))) / 100;
 		System.out.println("");
 		System.out.println("RESULTAT");
 		System.out.println("==========");
