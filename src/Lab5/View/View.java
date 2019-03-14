@@ -28,7 +28,10 @@ public class View extends SimView {
 	}
 
 	/**
-	 * Gets called on every state udate, prints what event happened and state/customer variables
+	 * Gets called on every state udate, prints what event happened and
+	 * state/customer variables
+	 * @param o Observable
+	 * @param arg1 is executed event
 	 */
 	@Override
 	public void update(Observable o, Object arg1) {
@@ -39,7 +42,10 @@ public class View extends SimView {
 		double time = ((double) ((int) Math.round(state.getTime().getTime() * 100))) / 100;
 		double timenoqueue = ((double) ((int) Math.round(state.getTotalUnqueueTime() * 100))) / 100;
 		double timequeue = ((double) ((int) Math.round(state.getTotalQueueTime() * 100))) / 100;
-		if (arg1 instanceof ArriveEvent) {
+		if (arg1 instanceof StartEvent) {
+			action = "Start";
+			System.out.println(((StartEvent) arg1).getStartTime() + " \t " + action);
+		} else if (arg1 instanceof ArriveEvent) {
 			ArriveEvent event = (ArriveEvent) arg1;
 			id = event.getCustomer().getID();
 			action = "Ankomst";
@@ -81,9 +87,6 @@ public class View extends SimView {
 			System.out.println(((EndEvent) arg1).getStartTime() + " \t " + action);
 			end();
 
-		} else if (arg1 instanceof StartEvent) {
-			action = "Start";
-			System.out.println(((StartEvent) arg1).getStartTime() + " \t " + action);
 		}
 
 	}
