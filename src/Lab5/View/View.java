@@ -42,7 +42,7 @@ public class View extends SimView {
 		String open = (state.getStore()) ? "Ö" : "S";
 		double time = Math.round(state.getTime().getTime());
 		double timenoqueue = Math.round(state.getTotalUnqueueTime());
-		double timequeue = ((double) ((int) (state.getTotalQueueTime() * 100))) / 100;
+		double timequeue = Math.round(state.getTotalQueueTime());
 
 		// beroende på typ av event behövs olika medelanden,
 		if (arg1 instanceof ArriveEvent) {
