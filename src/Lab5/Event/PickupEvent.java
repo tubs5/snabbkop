@@ -6,17 +6,31 @@ import Lab5.State.FIFO;
 import Lab5.State.MarketState;
 
 /**
- * Created by Tobias Heidlund on 2019-03-08.
+ * This event simulates a customer picking up an item
+ * 
+ * @author Victor Longberg, Tobias Heidlund Simon Lundberg och Klas Mannberg
  */
 public class PickupEvent extends Event{
     private Customer customer;
     private MarketState marketState;
+    
+    /**
+     * This is the PickupEvent constructor
+     * 
+     * @param startTime A double
+     * @param queue An EventQueue
+     * @param marketState A MarketState
+     * @param customer A Customer
+     */
     public PickupEvent(double startTime, EventQueue queue, MarketState marketState, Customer customer) {
         super(startTime, queue);
         this.customer = customer;
         this.marketState = marketState;
     }
-
+    
+    /**
+     * This method executes the event
+     */
     @Override
     public void ExecuteEvent() {
         marketState.getTime().setTime(startTime);
@@ -32,12 +46,20 @@ public class PickupEvent extends Event{
 
 
     }
-
+    /**
+     * This method returns the start time
+     * 
+     * @return The start time
+     */
     @Override
     public double getStartTime() {
         return startTime;
     }
-
+    /**
+     * This method returns the Customer
+     * 
+     * @return The Customer
+     */
     public Customer getCustomer(){
         return customer;
     }
