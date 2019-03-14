@@ -18,6 +18,7 @@ public class StartEvent extends Event{
 
     @Override
     public void ExecuteEvent() {
+        marketState.observable(this);
         marketState.openStore();
 
 
@@ -25,7 +26,6 @@ public class StartEvent extends Event{
         ArriveEvent arriveEvent = new ArriveEvent(marketState.getTime().getNextCustomer(),queue,marketState,customer);
         queue.addEvent(arriveEvent);
 
-        marketState.observable(this);
     }
 
     @Override

@@ -18,8 +18,9 @@ public class CloseEvent extends Event{
     @Override
     public void ExecuteEvent() {
         marketState.getTime().setTime(startTime);
-        marketState.closeStore();
         marketState.observable(this);
+        marketState.closeStore();
+
     }
 
     @Override
