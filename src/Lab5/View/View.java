@@ -30,7 +30,8 @@ public class View extends SimView {
 	/**
 	 * Gets called on every state udate, prints what event happened and
 	 * state/customer variables
-	 * @param o Observable
+	 * 
+	 * @param o    Observable
 	 * @param arg1 is executed event
 	 */
 	@Override

@@ -1,6 +1,5 @@
 package Lab5.View;
 
-import java.util.Observable;
 import java.util.Observer;
 
 import Lab5.State.SimState;
@@ -25,7 +24,7 @@ public abstract class SimView implements Observer {
 	}
 
 	public abstract void start();
-	public abstract void end();
 
+	public abstract void end();
 
 }

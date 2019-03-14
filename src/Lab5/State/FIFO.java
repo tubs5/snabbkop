@@ -3,17 +3,16 @@ package Lab5.State;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Queue;
+
 /**
- * This class is a "First in, First out" queue that simulates the queue to the checkouts.
- * 
+ * FIFO list containing customers in queue
  * @author Victor Longberg, Tobias Heidlund, Simon Lundberg och Klas Mannberg
  *
  */
-public class FIFO{
-	
+public class FIFO {
+
 	private ArrayList<Customer> queue = new ArrayList<Customer>();
-	
-	
+
 	/**
 	 * This method adds a customer to the queue.
 	 * 
@@ -22,7 +21,7 @@ public class FIFO{
 	public void add(Customer c) {
 		queue.add(c);
 	}
-	
+
 	/**
 	 * This method removes a customer to the queue.
 	 * 
@@ -31,8 +30,7 @@ public class FIFO{
 	public void remove(Customer c) {
 		queue.remove(c);
 	}
-	
-	
+
 	/**
 	 * This method gets the first item in the queue and also removes it.
 	 * 
@@ -41,11 +39,10 @@ public class FIFO{
 	public Customer getFirst() {
 		Customer c = queue.get(0);
 		queue.remove(0);
-		return c ;
-		
+		return c;
+
 	}
-	
-	
+
 	/**
 	 * This method returns the size of the queue
 	 * 
@@ -54,8 +51,7 @@ public class FIFO{
 	public int getSize() {
 		return queue.size();
 	}
-	
-	
+
 	/**
 	 * This method returns the queu as a list
 	 * 
