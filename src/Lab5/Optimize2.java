@@ -9,7 +9,7 @@ import Lab5.View.View;
 
 import java.util.Random;
 
-public class Optimize {
+public class Optimize2 {
     Random rand = new Random();
 	int maxCustomers = 10;
 	double arrivalSpeed = 2;
@@ -21,11 +21,11 @@ public class Optimize {
 
 
     public static void main(String[] args) {
-    	new Optimize();
+    	new Optimize2();
 
 
     }
-    public Optimize(){
+    public Optimize2(){
         seedOptimize();
     	//kassaOptimize(12390);
     }
