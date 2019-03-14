@@ -35,16 +35,13 @@ public class View extends SimView {
  */
 	@Override
 	public void update(Observable o, Object arg1) {
-	String action = "Start";
-
+		String action = "Start";
 		int id = 0;
 		String open = (state.getStore()) ? "Ö" : "S";
 		double time = ((double)((int)(state.getTime().getTime()*100)))/100;
 		double timenoqueue = ((double)((int)(state.getTotalUnqueueTime()*100)))/100;
 		double timequeue = ((double)((int)(state.getTotalQueueTime()*100)))/100;
-		
-		//double qtime = 0;
-		//double stime = 0;
+
 		// beroende på typ av event behövs olika medelanden,
 		if (arg1 instanceof ArriveEvent) {
 			ArriveEvent event = (ArriveEvent) arg1;
@@ -92,7 +89,6 @@ public class View extends SimView {
  * Endprint
  */
 	public void end() {
-		//double time = ((double)((int)(state.getTotalQueueTime() / (state.getMissedCustomers()+state.getCompletedCustomers())*100)))/100;
 		double timequeue = ((double)((int)(state.getTotalQueueTime()*100)))/100;
 		double timenoqueue = ((double)((int)((state.getTotalUnqueueTime())*100)))/100;
 		double timequeueavg =((double)((int)((timequeue/state.getQueueingCustomers())*100)))/100;
