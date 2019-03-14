@@ -4,7 +4,7 @@ import Lab5.Queue.EventQueue;
 import Lab5.State.*;
 
 /**
- * ArriveEvent signals that an customer has arrived to the store and checks if
+ * ArriveEvent signals that a customer has arrived to the store and checks if
  * he can fit inside the store. It also checks for the potential customers lost
  * due to a full store.
  * 
