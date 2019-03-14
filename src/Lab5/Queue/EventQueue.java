@@ -3,6 +3,8 @@ package Lab5.Queue;
 import Lab5.Event.*;
 
 /**
+ *	This class is a queue of events 
+ * 
  * @author Victor Longberg, Tobias Heidlund Simon Lundberg och Klas Mannberg
  */
 public class EventQueue {
