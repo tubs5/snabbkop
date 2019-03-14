@@ -9,17 +9,24 @@ import Lab5.View.View;
 
 import java.util.Random;
 
+/**
+ * Optimizes the amount of kassor som behövs
+ *
+ * @author Victor Longberg, Tobias Heidlund, Simon Lundberg och Klas Mannberg
+ */
 public class Optimize {
+
+
     Random rand = new Random();
-    int kassor  = 2;
-    int maxCustomers = 5;
-    double arrivalSpeed = 1;
-    double P_min = 0.5;
-    double P_max = 1;
-    double B_min = 2;
-    double B_max = 3;
-    int seed = 1234;
-    int closeTime = 10;
+    private int maxCustomers = 1400;
+    private double arrivalSpeed = 100;
+    private double P_min = 0.45;
+    private double P_max = 0.65;
+    private double B_min = 0.2;
+    private double B_max = 0.3;
+    private int seed = 42;
+    private int closeTime = 20;
+    private int missade;
 
 
     public static void main(String[] args) {
@@ -27,6 +34,8 @@ public class Optimize {
 
 
     }
+
+    //runs optimisation
     public Optimize(){
         seedOptimze();
         System.out.println("Max Customers, M\t"+ maxCustomers);
@@ -36,47 +45,71 @@ public class Optimize {
         System.out.println("frö,f\t"+ seed);
         System.out.println("StängningsTid\t" + closeTime);
         System.out.println("Minst kassor \t" + this.seedOptimze());
+        System.out.println("missade kunder \t"+ missade);
     }
 
 
-    public MarketState simSetup(int kassor){
+    //sets up the simulations
+    private MarketState simSetup(int kassor,int seed){
         EventQueue events = new EventQueue();
         MarketState state = new MarketState(kassor,maxCustomers,arrivalSpeed,P_min,P_max,B_min,B_max,seed);
-        View view = new View(state);
         StartEvent startEvent = new StartEvent(0,events,state);
         events.addEvent(startEvent);
         CloseEvent closeEvent = new CloseEvent(closeTime,events,state);
         events.addEvent(closeEvent);
         EndEvent endEvent = new EndEvent(999,events,state);
         events.addEvent(endEvent);
-        Simulator Market = new Simulator(view, events, state);
+        Simulator Market = new Simulator(null, events, state);
         Market.start();
         return state;
     }
 
-    public int kassaOptimze(){
-        seed = rand.nextInt();
-        int lost;
-        int lastcashiers = 0;
-        int kassor = maxCustomers / 2;
-        while (kassor != lastcashiers) {
-            lost = simSetup(kassor).getMissedCustomers();
-            lastcashiers = kassor;
-            if (lost > 0) {
-                kassor += kassor / 2;
-            } else {
-                kassor -= kassor / 2;
-            }
-            kassor = kassor == 0 ? 1 : kassor;
-        }
-        return kassor;
+    //runs the optimisations for kassor
+    private int kassaOptimze(int seed){
+        int gap = maxCustomers/2;
+        int kassor = maxCustomers;
+        missade = benchmark(seed);
+        int missadeCurr;
+
+         while (true){
+             missadeCurr = simSetup(kassor,seed).getMissedCustomers();
+             if(gap > 1) {
+
+                     if (missade < missadeCurr) {
+                         kassor = kassor + gap;
+                         gap = gap/2;
+                     } else {
+                         kassor = kassor - gap;
+                         gap = gap/2;
+                     }
+             }else {
+                 if (missadeCurr == missade){
+                     if(simSetup(kassor-1,seed).getMissedCustomers()>missade){
+                         return kassor;
+                     }else {
+                         kassor--;
+                     }
+                 }else if(missadeCurr  > missade){
+                     kassor++;
+                 }
+             }
+
+
+         }
     }
 
+
+
+    private int benchmark(int seed) {
+        return simSetup(maxCustomers,seed).getMissedCustomers();
+    }
+
+
+    //finds the best amount of kassor for several seeds
     public int seedOptimze(){
         int minstaKassor = 1;
         for (int i = 0; i < 10; i++) {
-            System.out.println(i);
-            int nuvarandeMinKassor = kassaOptimze();
+            int nuvarandeMinKassor = kassaOptimze(seed);
             if( nuvarandeMinKassor> minstaKassor){
                 minstaKassor = nuvarandeMinKassor;
                 i = 0;
