@@ -16,13 +16,14 @@ import Lab5.View.View;
 public class MainSim {
 	public static void main(String[] args) {
 		int kassor  = 2;
-		int maxCustomers = 7;
-		double arrivalSpeed = 3;
-		double P_min = 0.6;
-		double P_max = 0.9;
-		double B_min = 0.35;
-		double B_max = 0.6;
-		int seed = 13;
+		int maxCustomers = 5;
+		double arrivalSpeed = 1;
+		double P_min = 0.5;
+		double P_max = 1;
+		double B_min = 2;
+		double B_max = 3;
+		int seed = 1234;
+		int closeTime = 10;
 
 	
 		EventQueue events = new EventQueue();
@@ -33,7 +34,7 @@ public class MainSim {
         StartEvent startEvent = new StartEvent(0,events,state);
 		events.addEvent(startEvent);
 
-		CloseEvent closeEvent = new CloseEvent(8,events,state);
+		CloseEvent closeEvent = new CloseEvent(closeTime,events,state);
 		events.addEvent(closeEvent);
 
 		Simulator Market = new Simulator(view, events, state);

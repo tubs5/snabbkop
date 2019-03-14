@@ -140,6 +140,7 @@ public class MarketState extends SimState{
 		 * 
 		 */
 		public void addActiveKassa() {
+			this.addTotalUnqueueTime();
 			activeKassor++;
 		}
 		
@@ -149,6 +150,7 @@ public class MarketState extends SimState{
 		 * 
 		 */
 		public void removeActiveKassa() {
+			this.addTotalUnqueueTime();
 			activeKassor--;
 		}
 		

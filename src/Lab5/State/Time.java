@@ -3,16 +3,14 @@ package Lab5.State;
 public class Time {
 	
 	private double time;
-	private MarketState marketState;
 	private UniformRandomStream pickupTime;
 	private UniformRandomStream payTime;
 	private ExponentialRandomStream arrivalSpeed;
 
 	public Time(MarketState state){
-		this.marketState = state;
-		this.pickupTime = new UniformRandomStream(marketState.getP_min(),marketState.getP_max(),marketState.getSeed());
-		this.payTime = new UniformRandomStream(marketState.getB_min(),marketState.getB_max(),marketState.getSeed());
-		this.arrivalSpeed = new ExponentialRandomStream(marketState.getArrivalSpeed(),marketState.getSeed());
+		this.pickupTime = new UniformRandomStream(state.getP_min(), state.getP_max(), state.getSeed());
+		this.payTime = new UniformRandomStream(state.getB_min(), state.getB_max(), state.getSeed());
+		this.arrivalSpeed = new ExponentialRandomStream(state.getArrivalSpeed(), state.getSeed());
 
 	}
 
