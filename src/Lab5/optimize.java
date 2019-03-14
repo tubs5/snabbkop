@@ -109,7 +109,16 @@ public class optimize {
 	}
 	
 	private int runSim(int cashiers, int seed) {
-		return runOptimal(cashiers, seed);
+		//return runOptimal(cashiers, seed);
+		int a =0;
+		int best = runOptimal(a, seed);
+		int next = runOptimal(a+1, seed);
+		for(int i = 0; i<100;i++) {
+			if (best > next) {
+				best = next;
+			}
+		}
+		return best;
 		
 	}
 	
@@ -165,7 +174,7 @@ public class optimize {
 	public static void main(String[] args) {
 		optimize opt = new optimize();
 		System.out.println("Max som ryms, M..........: " + MAXCUSTOMERS);
-		System.out.println("Ankomshastighet, lambda..: " + ARRIVALSPEED);
+		System.out.println("Ankomshastighet, ArrivalSpeed..: " + ARRIVALSPEED);
 		System.out.println("Plocktider, [P_min..Pmax]: [" + P_MIN + ".." + P_MAX +"]");
 		System.out.println("Betaltider, [K_min..Kmax]: [" + B_MIN + ".." + B_MAX + "]");
 		System.out.println("Frö, f...................: " + SEED);
