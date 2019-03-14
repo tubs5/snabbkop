@@ -6,15 +6,14 @@ package Lab5.State;
  *
  */
 public class Customer {
-	
+
 	private int customerID;
 	private static int customerids = 0;
 
-
-	public Customer(){
+	public Customer() {
 		customerID = customerids++;
 	}
-	
+
 	/**
 	 * This method returns the customers ID.
 	 * 
@@ -26,6 +25,6 @@ public class Customer {
 
 	@Override
 	public String toString() {
-		return ""+customerID;
+		return "" + customerID;
 	}
 }

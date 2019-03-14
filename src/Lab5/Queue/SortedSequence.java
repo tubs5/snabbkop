@@ -6,6 +6,7 @@ import java.util.ArrayList;
 
 /**
  * Sorts events
+ * 
  * @author Victor Longberg, Tobias Heidlund, Simon Lundberg och Klas Mannberg
  */
 public class SortedSequence {
